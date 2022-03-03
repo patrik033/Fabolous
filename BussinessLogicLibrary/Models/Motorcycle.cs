@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace BussinessLogicLibrary
 {
-   public class Motorcycle : IVehicle
-   {
+    public class Motorcycle : IVehicle
+    {
         public int Id { get; set; }
-        public string Registration { get; set; }
-        public DateTime? StartTime { get; set; }
-        public int Size { get; set; }
-    }
-        public DateTime StartTime { get; set; } = DateTime.Now;
+        public string Registration { get; set; }             
         public int Size { get; set; } = 2;
+        public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// Använd ifall du vill ange specifika värden på allt, annars, använd andra kontruktorn
@@ -26,7 +23,7 @@ namespace BussinessLogicLibrary
         {
             Registration = reg;
             StartTime = startTime;
-            Size = size;   
+            Size = size;
         }
 
         /// <summary>
@@ -36,6 +33,7 @@ namespace BussinessLogicLibrary
         public Motorcycle(string reg)
         {
             Registration = reg;
-        }
-   }
+        } 
+    }
+   
 }
