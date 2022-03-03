@@ -22,6 +22,7 @@ namespace DatabaseAccessLibrary
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Car>().HasData(SeedTestData());
+            modelBuilder.Entity<Motorcycle>().HasData(SeedTestDataMc());
 
         }
 
@@ -34,6 +35,16 @@ namespace DatabaseAccessLibrary
                 cars = JsonConvert.DeserializeObject<List<Car>>(json);
             }
             return cars;
+        }
+        public List<Motorcycle> SeedTestDataMc()
+        {
+            var mc = new List<Motorcycle>();
+            using (StreamReader reader = new StreamReader(@"McTestData.json"))
+            {
+                string json = reader.ReadToEnd();
+                mc = JsonConvert.DeserializeObject<List<Motorcycle>>(json);
+            }
+            return mc;
         }
     }
 }
