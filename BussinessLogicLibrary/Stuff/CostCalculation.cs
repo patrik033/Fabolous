@@ -12,13 +12,13 @@ namespace BussinessLogicLibrary
 
         public decimal CalculateCost(DateTime startTime, int costPerHour)
         {
-            float totalHours = (DateTime.Now - startTime).Hours;
+            TimeSpan totalHours = (DateTime.Now - startTime);
 
-            decimal total = (decimal)Math.Round(totalHours * costPerHour, 2);
+            decimal total = (decimal)Math.Round(totalHours.TotalHours * costPerHour);
 
-            total = Math.Round(total - (costPerHour / 6), 2);
+            total = Math.Round(total - (costPerHour / 6));
 
-            if (total > (decimal)0.5)
+            if (total > 0)
 
                 return total;
 
