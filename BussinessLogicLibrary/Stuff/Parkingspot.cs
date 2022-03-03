@@ -9,6 +9,6 @@ namespace BussinessLogicLibrary
     class Parkingspot
     {
         public int Size { get; set; } = 4;
-        Dictionary<string, int> Parked_Vehicles { get; set; }
+        public Dictionary<string, int> Parked_Vehicles { get; set; }
     }
 }
