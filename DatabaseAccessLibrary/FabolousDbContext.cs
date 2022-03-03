@@ -18,14 +18,20 @@ namespace DatabaseAccessLibrary
         {
             
         }
-
+        /// <summary>
+        /// Mata databasen med testdata när den skapas för första gången
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Car>().HasData(SeedTestData());
             modelBuilder.Entity<Motorcycle>().HasData(SeedTestDataMc());
 
         }
-
+        /// <summary>
+        /// Seed metod för att läsa in bilar ifrån fil
+        /// </summary>
+        /// <returns></returns>
         public List<Car> SeedTestData()
         {
             var cars = new List<Car>();
@@ -36,6 +42,10 @@ namespace DatabaseAccessLibrary
             }
             return cars;
         }
+        /// <summary>
+        /// Seed metod för att läs in mc´s från fil
+        /// </summary>
+        /// <returns></returns>
         public List<Motorcycle> SeedTestDataMc()
         {
             var mc = new List<Motorcycle>();
