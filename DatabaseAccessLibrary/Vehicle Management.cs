@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BussinessLogicLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,22 @@ namespace DatabaseAccessLibrary
                 _db.SaveChanges();
             }
 
+        }
+
+        public List<dynamic> LoadVehicleList(string vehicleType)
+        {
+            List<dynamic> vehicleList = new List<dynamic>();
+            if (vehicleType.ToLower() == "car")
+            {               
+                vehicleList = (List<dynamic>)_db.cars.Cast<dynamic>();
+                return vehicleList;
+            }
+            else if (vehicleType.ToLower() == "motorcycle")
+            {
+                vehicleList = (List<dynamic>)_db.motorcycles.Cast<dynamic>();
+                return vehicleList;
+            }
+            return vehicleList;
         }
         
     }
