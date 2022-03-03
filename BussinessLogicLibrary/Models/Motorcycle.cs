@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace BussinessLogicLibrary
 {
-    class Motorcycle : IVehicle
+   public class Motorcycle : IVehicle
     {
+        public int Id { get; set; }
         public string Registration { get; set; }
         public DateTime StartTime { get; set; }
         public int Size { get; set; }
