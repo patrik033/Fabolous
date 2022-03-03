@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BussinessLogicLibrary
 {
-    class Parkingspot
+    public class Parkingspot
     {
         public int Size { get; set; } = 4;
-        public Dictionary<string, int> Parked_Vehicles { get; set; }
+        public Dictionary<string, object> Parked_Vehicles { get; set; }
     }
 }
