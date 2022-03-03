@@ -10,6 +10,9 @@ namespace BussinessLogicLibrary
    {
         public int Id { get; set; }
         public string Registration { get; set; }
+        public DateTime? StartTime { get; set; }
+        public int Size { get; set; }
+    }
         public DateTime StartTime { get; set; } = DateTime.Now;
         public int Size { get; set; } = 2;
 
