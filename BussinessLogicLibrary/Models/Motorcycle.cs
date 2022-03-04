@@ -12,9 +12,9 @@ namespace BussinessLogicLibrary
         public string Registration { get; set; }
         public DateTime? StartTime { get; set; }
         public int Size { get; set; }
-    }
-        public DateTime StartTime { get; set; } = DateTime.Now;
-        public int Size { get; set; } = 2;
+    
+        //public DateTime StartTime { get; set; } = DateTime.Now;
+        //public int Size { get; set; } = 2;
 
         /// <summary>
         /// Använd ifall du vill ange specifika värden på allt, annars, använd andra kontruktorn
@@ -27,6 +27,11 @@ namespace BussinessLogicLibrary
             Registration = reg;
             StartTime = startTime;
             Size = size;   
+        }
+
+        public Motorcycle()
+        {
+
         }
 
         /// <summary>

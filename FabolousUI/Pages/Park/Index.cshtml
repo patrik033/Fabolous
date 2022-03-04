@@ -42,7 +42,7 @@
 </table>*@
 
 @{
-    var numberOfColsNeeded = 6;
+    var numberOfColsNeeded = 5;
     var totalCounter = Model.Cars.Count();
     var itemCounter = 1;
 }
@@ -54,7 +54,7 @@
         @:<div class="row" >
             <br />
     }
-    <div class="col-lg-2  pb-3">
+    <div class="col-lg-2 col-md-4 col-sm-6 pb-3">
         <div class="gridBox" data-id="@item.Id">
             <div class="logo">
                 <a class="btn btn-primary">@item.Registration</a>
