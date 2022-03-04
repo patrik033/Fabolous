@@ -13,6 +13,8 @@ namespace BussinessLogicLibrary
         public int Size { get; set; } = 2;
         public DateTime? StartTime { get; set; }
 
+        public int Parkingspot { get; set; }
+
         /// <summary>
         /// Använd ifall du vill ange specifika värden på allt, annars, använd andra kontruktorn
         /// </summary>
