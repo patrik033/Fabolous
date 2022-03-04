@@ -33,7 +33,12 @@ namespace BussinessLogicLibrary
         public Motorcycle(string reg)
         {
             Registration = reg;
-        } 
+        }
+
+        public Motorcycle()
+        {
+
+        }
     }
    
 }

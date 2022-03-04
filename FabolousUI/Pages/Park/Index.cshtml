@@ -1,45 +1,14 @@
 ﻿@page
 @model FabolousUI.Pages.Park.IndexModel
 
+
+
 <h1>Park page</h1>
 
 
 <hr />
 <br />
 <br />
-@*<table class="table table-bordered table-striped" style="width:100%">
-    <thead>
-        <tr>
-            <th>
-                Size
-            </th>
-            <th>
-                Registration
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var list in Model.Cars)
-        {
-            <tr>
-                <td width="30%">@list.Size   </td>
-                <td width="30%">@list.Registration</td>
-                <td>
-                    <a asp-page="Edit" asp-route-id="@list.Id" class="btn btn-primary mx-2">
-                        Edit
-                        <i class="bi-pencil-square"></i>
-                    </a>
-                    <a asp-page="Delete" asp-route-id="@list.Id" class="btn btn-danger mx-2">
-                        Delete
-                        <i class="bi-trash-fill"></i>
-                    </a>
-                </td>
-            </tr>
-        }
-
-    </tbody>
-</table>*@
 
 @{
     var numberOfColsNeeded = 5;
@@ -57,7 +26,7 @@
     <div class="col-lg-2 col-md-4 col-sm-6 pb-3">
         <div class="gridBox" data-id="@item.Id">
             <div class="logo">
-                <a class="btn btn-primary">@item.Registration</a>
+                <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-primary">@item.Registration @item.Size</a> 
             </div>
         </div>
     </div>    
@@ -67,4 +36,10 @@
         @:</div>
     }
     itemCounter++;
-};
+}
+
+<paging 
+    page-no="Model.P"
+    page-size="Model.S"
+    total-records="Model.TotalRecords">
+</paging>
