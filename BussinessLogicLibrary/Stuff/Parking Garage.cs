@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace BussinessLogicLibrary
 {
-    class Parking_Garage
-    {
-        
+    public class Parking_Garage
+    {        
         public List<Parkingspot> Parkingspots { get; set; }
     }
 }
