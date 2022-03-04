@@ -39,7 +39,7 @@ namespace DatabaseAccessLibrary
 
         }
         /// <summary>
-        /// Skall retunera en lista med alla objekt från databasen. Vilket avgörs utan indatan, i detta fall fordonstypen.
+        /// Skall retunera en lista med alla objekt från databasen. Vilket avgörs utav indatan, i detta fall fordonstypen.
         /// </summary>
         /// <param name="vehicleType"></param>
         /// <returns></returns>

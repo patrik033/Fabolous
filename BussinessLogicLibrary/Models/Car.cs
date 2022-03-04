@@ -12,5 +12,7 @@ namespace BussinessLogicLibrary
         public int Size { get; set; } = 4;
         public string Registration { get; set; }
         public DateTime? StartTime { get; set; }
+
+        public int Parkingspot { get; set; }
     }
 }
