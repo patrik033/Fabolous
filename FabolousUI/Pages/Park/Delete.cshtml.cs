@@ -31,7 +31,7 @@ namespace FabolousUI.Pages.Park
                 _context.cars.Remove(category);
                 await _context.SaveChangesAsync();
             }
-            //TempData["Success"] = "Category deleted successfully";
+            TempData["Success"] = "Vehicle deleted successfully";
             return RedirectToPage("Index");
         }
     }

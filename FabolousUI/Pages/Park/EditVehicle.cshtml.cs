@@ -26,6 +26,7 @@ namespace FabolousUI.Pages.Park
         {
             _context.cars.Update(myCar);
             await _context.SaveChangesAsync();
+            TempData["Success"] = "Vehicle edited successfully";
             return RedirectToPage("Index");
         }
   
