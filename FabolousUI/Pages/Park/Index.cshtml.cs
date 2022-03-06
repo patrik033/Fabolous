@@ -11,6 +11,7 @@ namespace FabolousUI.Pages.Park
         private readonly FabolousDbContext _context;
         public IList<Car> Cars { get; set; }
         private Car[] cars { get; set; }
+
         //page number variable
         [BindProperty(SupportsGet = true)]
         public int P { get; set; } = 1;

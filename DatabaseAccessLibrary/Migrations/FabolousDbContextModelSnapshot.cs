@@ -30,6 +30,9 @@ namespace DatabaseAccessLibrary.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("Parkingspot")
+                        .HasColumnType("int");
+
                     b.Property<string>("Registration")
                         .HasColumnType("nvarchar(max)");
 
@@ -47,300 +50,350 @@ namespace DatabaseAccessLibrary.Migrations
                         new
                         {
                             Id = 1,
+                            Parkingspot = 1,
                             Registration = "GBD5472",
                             Size = 1
                         },
                         new
                         {
                             Id = 2,
+                            Parkingspot = 2,
                             Registration = "7ZEE285",
                             Size = 2
                         },
                         new
                         {
                             Id = 3,
+                            Parkingspot = 3,
                             Registration = "T5540N",
                             Size = 3
                         },
                         new
                         {
                             Id = 4,
+                            Parkingspot = 4,
                             Registration = "LKY3494",
                             Size = 4
                         },
                         new
                         {
                             Id = 5,
+                            Parkingspot = 5,
                             Registration = "FXZ6807",
                             Size = 5
                         },
                         new
                         {
                             Id = 6,
+                            Parkingspot = 6,
                             Registration = "8236TE",
                             Size = 6
                         },
                         new
                         {
                             Id = 7,
+                            Parkingspot = 7,
                             Registration = "630XDK",
                             Size = 7
                         },
                         new
                         {
                             Id = 8,
+                            Parkingspot = 8,
                             Registration = "LOVE",
                             Size = 8
                         },
                         new
                         {
                             Id = 9,
+                            Parkingspot = 9,
                             Registration = "8739698",
                             Size = 9
                         },
                         new
                         {
                             Id = 10,
+                            Parkingspot = 10,
                             Registration = "KK9915",
                             Size = 10
                         },
                         new
                         {
                             Id = 11,
+                            Parkingspot = 11,
                             Registration = "BENCH",
                             Size = 11
                         },
                         new
                         {
                             Id = 12,
+                            Parkingspot = 12,
                             Registration = "HYB4966",
                             Size = 12
                         },
                         new
                         {
                             Id = 13,
+                            Parkingspot = 13,
                             Registration = "7K44135",
                             Size = 13
                         },
                         new
                         {
                             Id = 14,
+                            Parkingspot = 14,
                             Registration = "HTM4861",
                             Size = 14
                         },
                         new
                         {
                             Id = 15,
+                            Parkingspot = 15,
                             Registration = "5WAS727",
                             Size = 15
                         },
                         new
                         {
                             Id = 16,
+                            Parkingspot = 16,
                             Registration = "1076952",
                             Size = 16
                         },
                         new
                         {
                             Id = 17,
+                            Parkingspot = 17,
                             Registration = "QFX241",
                             Size = 17
                         },
                         new
                         {
                             Id = 18,
+                            Parkingspot = 18,
                             Registration = "7Z50T2",
                             Size = 18
                         },
                         new
                         {
                             Id = 19,
+                            Parkingspot = 19,
                             Registration = "6LME062",
                             Size = 19
                         },
                         new
                         {
                             Id = 20,
+                            Parkingspot = 20,
                             Registration = "7UFH698",
                             Size = 20
                         },
                         new
                         {
                             Id = 21,
+                            Parkingspot = 21,
                             Registration = "EUG190",
                             Size = 21
                         },
                         new
                         {
                             Id = 22,
+                            Parkingspot = 22,
                             Registration = "X35FNH",
                             Size = 22
                         },
                         new
                         {
                             Id = 23,
+                            Parkingspot = 23,
                             Registration = "KQVR90",
                             Size = 23
                         },
                         new
                         {
                             Id = 24,
+                            Parkingspot = 24,
                             Registration = "8EYV287",
                             Size = 24
                         },
                         new
                         {
                             Id = 25,
+                            Parkingspot = 25,
                             Registration = "6855OP",
                             Size = 25
                         },
                         new
                         {
                             Id = 26,
+                            Parkingspot = 26,
                             Registration = "7AAA642",
                             Size = 26
                         },
                         new
                         {
                             Id = 27,
+                            Parkingspot = 27,
                             Registration = "7YBK462",
                             Size = 27
                         },
                         new
                         {
                             Id = 28,
+                            Parkingspot = 28,
                             Registration = "8DGP853",
                             Size = 28
                         },
                         new
                         {
                             Id = 29,
+                            Parkingspot = 29,
                             Registration = "SC20365",
                             Size = 29
                         },
                         new
                         {
                             Id = 30,
+                            Parkingspot = 30,
                             Registration = "BCF9407",
                             Size = 30
                         },
                         new
                         {
                             Id = 31,
+                            Parkingspot = 31,
                             Registration = "CKH7844",
                             Size = 31
                         },
                         new
                         {
                             Id = 32,
+                            Parkingspot = 32,
                             Registration = "BB9487",
                             Size = 32
                         },
                         new
                         {
                             Id = 33,
+                            Parkingspot = 33,
                             Registration = "487TBS",
                             Size = 33
                         },
                         new
                         {
                             Id = 34,
+                            Parkingspot = 34,
                             Registration = "SC20337",
                             Size = 34
                         },
                         new
                         {
                             Id = 35,
+                            Parkingspot = 35,
                             Registration = "L4802T",
                             Size = 35
                         },
                         new
                         {
                             Id = 36,
+                            Parkingspot = 36,
                             Registration = "BWN8988",
                             Size = 36
                         },
                         new
                         {
                             Id = 37,
+                            Parkingspot = 37,
                             Registration = "DRG4N6",
                             Size = 37
                         },
                         new
                         {
                             Id = 38,
+                            Parkingspot = 38,
                             Registration = "0AGVG0",
                             Size = 38
                         },
                         new
                         {
                             Id = 39,
+                            Parkingspot = 39,
                             Registration = "DKVQ31",
                             Size = 39
                         },
                         new
                         {
                             Id = 40,
+                            Parkingspot = 40,
                             Registration = "22528MC",
                             Size = 40
                         },
                         new
                         {
                             Id = 41,
+                            Parkingspot = 41,
                             Registration = "1CK7456",
                             Size = 41
                         },
                         new
                         {
                             Id = 42,
+                            Parkingspot = 42,
                             Registration = "AEH9540",
                             Size = 42
                         },
                         new
                         {
                             Id = 43,
+                            Parkingspot = 43,
                             Registration = "6JMW833",
                             Size = 43
                         },
                         new
                         {
                             Id = 44,
+                            Parkingspot = 44,
                             Registration = "535621B",
                             Size = 44
                         },
                         new
                         {
                             Id = 45,
+                            Parkingspot = 45,
                             Registration = "4JWR404",
                             Size = 45
                         },
                         new
                         {
                             Id = 46,
+                            Parkingspot = 46,
                             Registration = "N73EXY",
                             Size = 46
                         },
                         new
                         {
                             Id = 47,
+                            Parkingspot = 47,
                             Registration = "K9CRZY",
                             Size = 47
                         },
                         new
                         {
                             Id = 48,
+                            Parkingspot = 48,
                             Registration = "4GUG721",
                             Size = 48
                         },
                         new
                         {
                             Id = 49,
+                            Parkingspot = 49,
                             Registration = "8GTS234",
                             Size = 49
                         },
                         new
                         {
                             Id = 50,
+                            Parkingspot = 50,
                             Registration = "446AH",
                             Size = 50
                         });
@@ -353,6 +406,9 @@ namespace DatabaseAccessLibrary.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("Parkingspot")
+                        .HasColumnType("int");
 
                     b.Property<string>("Registration")
                         .HasColumnType("nvarchar(max)");
@@ -371,300 +427,350 @@ namespace DatabaseAccessLibrary.Migrations
                         new
                         {
                             Id = 1,
+                            Parkingspot = 0,
                             Registration = "19AX641",
                             Size = 1
                         },
                         new
                         {
                             Id = 2,
+                            Parkingspot = 0,
                             Registration = "55AR583",
                             Size = 2
                         },
                         new
                         {
                             Id = 3,
+                            Parkingspot = 0,
                             Registration = "23AH141",
                             Size = 3
                         },
                         new
                         {
                             Id = 4,
+                            Parkingspot = 0,
                             Registration = "7AR1649",
                             Size = 4
                         },
                         new
                         {
                             Id = 5,
+                            Parkingspot = 0,
                             Registration = "52AD117",
                             Size = 5
                         },
                         new
                         {
                             Id = 6,
+                            Parkingspot = 0,
                             Registration = "35AA969",
                             Size = 6
                         },
                         new
                         {
                             Id = 7,
+                            Parkingspot = 0,
                             Registration = "35AZ101",
                             Size = 7
                         },
                         new
                         {
                             Id = 8,
+                            Parkingspot = 0,
                             Registration = "26AA587",
                             Size = 8
                         },
                         new
                         {
                             Id = 9,
+                            Parkingspot = 0,
                             Registration = "51AT445",
                             Size = 9
                         },
                         new
                         {
                             Id = 10,
+                            Parkingspot = 0,
                             Registration = "26AI615",
                             Size = 10
                         },
                         new
                         {
                             Id = 11,
+                            Parkingspot = 0,
                             Registration = "57AT653",
                             Size = 11
                         },
                         new
                         {
                             Id = 12,
+                            Parkingspot = 0,
                             Registration = "62AB104",
                             Size = 12
                         },
                         new
                         {
                             Id = 13,
+                            Parkingspot = 0,
                             Registration = "21AJ791",
                             Size = 13
                         },
                         new
                         {
                             Id = 14,
+                            Parkingspot = 0,
                             Registration = "52AZ687",
                             Size = 14
                         },
                         new
                         {
                             Id = 15,
+                            Parkingspot = 0,
                             Registration = "23AL427",
                             Size = 15
                         },
                         new
                         {
                             Id = 16,
+                            Parkingspot = 0,
                             Registration = "38AI537",
                             Size = 16
                         },
                         new
                         {
                             Id = 17,
+                            Parkingspot = 0,
                             Registration = "5AF5358",
                             Size = 17
                         },
                         new
                         {
                             Id = 18,
+                            Parkingspot = 0,
                             Registration = "35AA351",
                             Size = 18
                         },
                         new
                         {
                             Id = 19,
+                            Parkingspot = 0,
                             Registration = "55AN371",
                             Size = 19
                         },
                         new
                         {
                             Id = 20,
+                            Parkingspot = 0,
                             Registration = "24AO379",
                             Size = 20
                         },
                         new
                         {
                             Id = 21,
+                            Parkingspot = 0,
                             Registration = "64AR362",
                             Size = 21
                         },
                         new
                         {
                             Id = 22,
+                            Parkingspot = 0,
                             Registration = "34AF518",
                             Size = 22
                         },
                         new
                         {
                             Id = 23,
+                            Parkingspot = 0,
                             Registration = "38AQ555",
                             Size = 23
                         },
                         new
                         {
                             Id = 24,
+                            Parkingspot = 0,
                             Registration = "24AI416",
                             Size = 24
                         },
                         new
                         {
                             Id = 25,
+                            Parkingspot = 0,
                             Registration = "59AO966",
                             Size = 25
                         },
                         new
                         {
                             Id = 26,
+                            Parkingspot = 0,
                             Registration = "34AT620",
                             Size = 26
                         },
                         new
                         {
                             Id = 27,
+                            Parkingspot = 0,
                             Registration = "40AD140",
                             Size = 27
                         },
                         new
                         {
                             Id = 28,
+                            Parkingspot = 0,
                             Registration = "30AG809",
                             Size = 28
                         },
                         new
                         {
                             Id = 29,
+                            Parkingspot = 0,
                             Registration = "66AP991",
                             Size = 29
                         },
                         new
                         {
                             Id = 30,
+                            Parkingspot = 0,
                             Registration = "18AD512",
                             Size = 30
                         },
                         new
                         {
                             Id = 31,
+                            Parkingspot = 0,
                             Registration = "33AX623",
                             Size = 31
                         },
                         new
                         {
                             Id = 32,
+                            Parkingspot = 0,
                             Registration = "64AP580",
                             Size = 32
                         },
                         new
                         {
                             Id = 33,
+                            Parkingspot = 0,
                             Registration = "13AY794",
                             Size = 33
                         },
                         new
                         {
                             Id = 34,
+                            Parkingspot = 0,
                             Registration = "55AC734",
                             Size = 34
                         },
                         new
                         {
                             Id = 35,
+                            Parkingspot = 0,
                             Registration = "30AD500",
                             Size = 35
                         },
                         new
                         {
                             Id = 36,
+                            Parkingspot = 0,
                             Registration = "38AF650",
                             Size = 36
                         },
                         new
                         {
                             Id = 37,
+                            Parkingspot = 0,
                             Registration = "6AM1722",
                             Size = 37
                         },
                         new
                         {
                             Id = 38,
+                            Parkingspot = 0,
                             Registration = "11AP780",
                             Size = 38
                         },
                         new
                         {
                             Id = 39,
+                            Parkingspot = 0,
                             Registration = "54AG156",
                             Size = 39
                         },
                         new
                         {
                             Id = 40,
+                            Parkingspot = 0,
                             Registration = "61AY262",
                             Size = 40
                         },
                         new
                         {
                             Id = 41,
+                            Parkingspot = 0,
                             Registration = "62AK646",
                             Size = 41
                         },
                         new
                         {
                             Id = 42,
+                            Parkingspot = 0,
                             Registration = "45AO853",
                             Size = 42
                         },
                         new
                         {
                             Id = 43,
+                            Parkingspot = 0,
                             Registration = "20AF377",
                             Size = 43
                         },
                         new
                         {
                             Id = 44,
+                            Parkingspot = 0,
                             Registration = "30AQ301",
                             Size = 44
                         },
                         new
                         {
                             Id = 45,
+                            Parkingspot = 0,
                             Registration = "62AZ570",
                             Size = 45
                         },
                         new
                         {
                             Id = 46,
+                            Parkingspot = 0,
                             Registration = "61AS803",
                             Size = 46
                         },
                         new
                         {
                             Id = 47,
+                            Parkingspot = 0,
                             Registration = "25AG915",
                             Size = 47
                         },
                         new
                         {
                             Id = 48,
+                            Parkingspot = 0,
                             Registration = "12AR787",
                             Size = 48
                         },
                         new
                         {
                             Id = 49,
+                            Parkingspot = 0,
                             Registration = "11AV356",
                             Size = 49
                         },
                         new
                         {
                             Id = 50,
+                            Parkingspot = 0,
                             Registration = "51AX141",
                             Size = 50
                         });

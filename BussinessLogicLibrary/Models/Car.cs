@@ -14,5 +14,17 @@ namespace BussinessLogicLibrary
         public DateTime? StartTime { get; set; }
 
         public int Parkingspot { get; set; }
+
+        public Car(int size,string registration,int parkingSpot)
+        {
+            Size = size;
+            Registration = registration;
+            Parkingspot = parkingSpot;
+        }
+
+        public Car()
+        {
+
+        }
     }
 }
