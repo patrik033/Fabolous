@@ -10,7 +10,7 @@ namespace BussinessLogicLibrary
     {
 
 
-        TimeSpan ParkedTime(DateTime startTime)
+        public TimeSpan ParkedTime(DateTime startTime)
         {
             TimeSpan totalHours = (DateTime.Now - startTime);
 
