@@ -6,10 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FabolousUI.Pages.Park
 {
+    [BindProperties]
     public class CreateModel : PageModel
     {
         private readonly FabolousDbContext _context;
-        public Car myCar { get; set; }
+        public Car myCar { get; set; } = new Car();
 
         public CreateModel(FabolousDbContext context)
         {

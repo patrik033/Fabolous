@@ -6,8 +6,8 @@
 
 <div class="row pe-5">
     <div class="col-6">
-        <form class="ps-5">
-
+        <form method="post" class="ps-5">
+            <input type="hidden" asp-for="@Model.myCar.Id" />
             <div class="border p-3 mt-4 ">
                 <div class="row pb-2">
                     <h2 class="text-primary pl-3">Checkout Page</h2>
@@ -19,24 +19,24 @@
                 <div class="container-fluid col-10">
 
                     <div class="mb-3">
-                        <label for="@Model.myCar.Registration" class="form-label">RegNr</label>
-                        <input  asp-for="@Model.myCar.Registration" readonly="readonly" class="form-control" style="width:80%" />
+                        <label asp-for="@Model.myCar.Registration" class="form-label">RegNr</label>
+                        <input asp-for="@Model.myCar.Registration" readonly="readonly" class="form-control" style="width:80%" />
                     </div>
                     <div class="mb-3">
-                        <label for="tid" class="form-label">Tid</label>
+                        <label  class="form-label">Tid</label>
                         <input type="text" class="form-control" style="width:80%" />
                     </div>
                     <div class="mb-3">
-                        <label for="kostnad" class="form-label">Kostnad</label>
+                        <label  class="form-label">Kostnad</label>
                         <input type="text" class="form-control" style="width:80%" />
                     </div>
-                   
-                        
-                    
-                    <a asp-page="../Park/Index" class="btn btn-primary mx-2" >Cancel</a>
-                    <a asp-page="/Index" class="btn btn-danger mx-2" >Checkout</a>
-                    
-                    
+
+
+
+                    <button type="submit" class="btn btn-danger mx-2">Checkout</button>
+                    <a asp-page="../Park/Index" class="btn btn-primary mx-2">Cancel</a>
+
+
 
                 </div>
             </div>

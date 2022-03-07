@@ -29,9 +29,14 @@ namespace FabolousUI.Pages.Checkout
             {
                 _context.cars.Remove(category);
                 await _context.SaveChangesAsync();
+                TempData["Success"] = "Vehicle deleted successfully";
+                return RedirectToPage("../Park/Index");
             }
-            TempData["Success"] = "Vehicle deleted successfully";
-            return RedirectToPage("Index");
+            else
+            {
+                TempData["error"] = "Vehicle not found";
+                return Page();
+            }
         }
     }
 }

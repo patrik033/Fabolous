@@ -1,11 +1,11 @@
 ﻿@page
 @model FabolousUI.Pages.Park.CreateModel
-@{
-}
+
 
 
 <form method="post">
     <div class="border p-3 mt-4 col-8">
+         <input type="hidden" asp-for="@Model.myCar.StartTime" value="@DateTime.Now"/>
         <div class="row pb-2">
             <h2 class="text-primary pl-3">Create Car</h2>
             <hr />
@@ -26,3 +26,4 @@
         </div>
     </div>
 </form>
+

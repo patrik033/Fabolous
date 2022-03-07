@@ -35,13 +35,17 @@
                 <th>
                     Size
                 </th>
+                <th>
+                    Date
+                </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td width="20%">@Model.myCar.Registration </td>
-                <td width="20%">@Model.myCar.Size</td>
+                <td width="15%">@Model.myCar.Registration </td>
+                <td width="15%">@Model.myCar.Size</td>
+              <td width="15%">@Model.myCar.StartTime</td>
                 <td>
                     <a asp-page="EditVehicle" asp-route-id="@Model.myCar.Id" class="btn btn-primary mx-2">
                         Edit
