@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatabaseAccessLibrary.Migrations
 {
     [DbContext(typeof(FabolousDbContext))]
-    [Migration("20220306085217_init")]
-    partial class init
+    [Migration("20220307104452_datetimeaddedontestdatainit")]
+    partial class datetimeaddedontestdatainit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,7 +41,7 @@ namespace DatabaseAccessLibrary.Migrations
                     b.Property<int>("Size")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("StartTime")
+                    b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -54,350 +54,400 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 1,
                             Parkingspot = 1,
                             Registration = "GBD5472",
-                            Size = 1
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
                             Parkingspot = 2,
                             Registration = "7ZEE285",
-                            Size = 2
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
                             Parkingspot = 3,
                             Registration = "T5540N",
-                            Size = 3
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
                             Parkingspot = 4,
                             Registration = "LKY3494",
-                            Size = 4
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
                             Parkingspot = 5,
                             Registration = "FXZ6807",
-                            Size = 5
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
                             Parkingspot = 6,
                             Registration = "8236TE",
-                            Size = 6
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 7,
                             Parkingspot = 7,
                             Registration = "630XDK",
-                            Size = 7
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 8,
                             Parkingspot = 8,
                             Registration = "LOVE",
-                            Size = 8
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 9,
                             Parkingspot = 9,
                             Registration = "8739698",
-                            Size = 9
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 10,
                             Parkingspot = 10,
                             Registration = "KK9915",
-                            Size = 10
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 11,
                             Parkingspot = 11,
                             Registration = "BENCH",
-                            Size = 11
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 12,
                             Parkingspot = 12,
                             Registration = "HYB4966",
-                            Size = 12
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 13,
                             Parkingspot = 13,
                             Registration = "7K44135",
-                            Size = 13
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 14,
                             Parkingspot = 14,
                             Registration = "HTM4861",
-                            Size = 14
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 15,
                             Parkingspot = 15,
                             Registration = "5WAS727",
-                            Size = 15
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 16,
                             Parkingspot = 16,
                             Registration = "1076952",
-                            Size = 16
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 17,
                             Parkingspot = 17,
                             Registration = "QFX241",
-                            Size = 17
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 18,
                             Parkingspot = 18,
                             Registration = "7Z50T2",
-                            Size = 18
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 19,
                             Parkingspot = 19,
                             Registration = "6LME062",
-                            Size = 19
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 20,
                             Parkingspot = 20,
                             Registration = "7UFH698",
-                            Size = 20
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 21,
                             Parkingspot = 21,
                             Registration = "EUG190",
-                            Size = 21
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 22,
                             Parkingspot = 22,
                             Registration = "X35FNH",
-                            Size = 22
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 23,
                             Parkingspot = 23,
                             Registration = "KQVR90",
-                            Size = 23
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 24,
                             Parkingspot = 24,
                             Registration = "8EYV287",
-                            Size = 24
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 25,
                             Parkingspot = 25,
                             Registration = "6855OP",
-                            Size = 25
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 26,
                             Parkingspot = 26,
                             Registration = "7AAA642",
-                            Size = 26
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 27,
                             Parkingspot = 27,
                             Registration = "7YBK462",
-                            Size = 27
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 28,
                             Parkingspot = 28,
                             Registration = "8DGP853",
-                            Size = 28
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 29,
                             Parkingspot = 29,
                             Registration = "SC20365",
-                            Size = 29
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 30,
                             Parkingspot = 30,
                             Registration = "BCF9407",
-                            Size = 30
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 31,
                             Parkingspot = 31,
                             Registration = "CKH7844",
-                            Size = 31
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 32,
                             Parkingspot = 32,
                             Registration = "BB9487",
-                            Size = 32
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 33,
                             Parkingspot = 33,
                             Registration = "487TBS",
-                            Size = 33
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 34,
                             Parkingspot = 34,
                             Registration = "SC20337",
-                            Size = 34
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 35,
                             Parkingspot = 35,
                             Registration = "L4802T",
-                            Size = 35
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 36,
                             Parkingspot = 36,
                             Registration = "BWN8988",
-                            Size = 36
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 37,
                             Parkingspot = 37,
                             Registration = "DRG4N6",
-                            Size = 37
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 38,
                             Parkingspot = 38,
                             Registration = "0AGVG0",
-                            Size = 38
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 39,
                             Parkingspot = 39,
                             Registration = "DKVQ31",
-                            Size = 39
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 40,
                             Parkingspot = 40,
                             Registration = "22528MC",
-                            Size = 40
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 41,
                             Parkingspot = 41,
                             Registration = "1CK7456",
-                            Size = 41
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 42,
                             Parkingspot = 42,
                             Registration = "AEH9540",
-                            Size = 42
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 43,
                             Parkingspot = 43,
                             Registration = "6JMW833",
-                            Size = 43
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 44,
                             Parkingspot = 44,
                             Registration = "535621B",
-                            Size = 44
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 45,
                             Parkingspot = 45,
                             Registration = "4JWR404",
-                            Size = 45
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 46,
                             Parkingspot = 46,
                             Registration = "N73EXY",
-                            Size = 46
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 47,
                             Parkingspot = 47,
                             Registration = "K9CRZY",
-                            Size = 47
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 48,
                             Parkingspot = 48,
                             Registration = "4GUG721",
-                            Size = 48
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 49,
                             Parkingspot = 49,
                             Registration = "8GTS234",
-                            Size = 49
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 50,
                             Parkingspot = 50,
                             Registration = "446AH",
-                            Size = 50
+                            Size = 4,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -418,7 +468,7 @@ namespace DatabaseAccessLibrary.Migrations
                     b.Property<int>("Size")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("StartTime")
+                    b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -429,352 +479,402 @@ namespace DatabaseAccessLibrary.Migrations
                         new
                         {
                             Id = 1,
-                            Parkingspot = 0,
+                            Parkingspot = 51,
                             Registration = "19AX641",
-                            Size = 1
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            Parkingspot = 0,
+                            Parkingspot = 52,
                             Registration = "55AR583",
-                            Size = 2
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
-                            Parkingspot = 0,
+                            Parkingspot = 53,
                             Registration = "23AH141",
-                            Size = 3
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
-                            Parkingspot = 0,
+                            Parkingspot = 54,
                             Registration = "7AR1649",
-                            Size = 4
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
-                            Parkingspot = 0,
+                            Parkingspot = 55,
                             Registration = "52AD117",
-                            Size = 5
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
-                            Parkingspot = 0,
+                            Parkingspot = 56,
                             Registration = "35AA969",
-                            Size = 6
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 7,
-                            Parkingspot = 0,
+                            Parkingspot = 57,
                             Registration = "35AZ101",
-                            Size = 7
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 8,
-                            Parkingspot = 0,
+                            Parkingspot = 58,
                             Registration = "26AA587",
-                            Size = 8
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 9,
-                            Parkingspot = 0,
+                            Parkingspot = 59,
                             Registration = "51AT445",
-                            Size = 9
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 10,
-                            Parkingspot = 0,
+                            Parkingspot = 60,
                             Registration = "26AI615",
-                            Size = 10
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 11,
-                            Parkingspot = 0,
+                            Parkingspot = 61,
                             Registration = "57AT653",
-                            Size = 11
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 12,
-                            Parkingspot = 0,
+                            Parkingspot = 62,
                             Registration = "62AB104",
-                            Size = 12
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 13,
-                            Parkingspot = 0,
+                            Parkingspot = 63,
                             Registration = "21AJ791",
-                            Size = 13
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 14,
-                            Parkingspot = 0,
+                            Parkingspot = 64,
                             Registration = "52AZ687",
-                            Size = 14
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 15,
-                            Parkingspot = 0,
+                            Parkingspot = 65,
                             Registration = "23AL427",
-                            Size = 15
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 16,
-                            Parkingspot = 0,
+                            Parkingspot = 66,
                             Registration = "38AI537",
-                            Size = 16
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 17,
-                            Parkingspot = 0,
+                            Parkingspot = 67,
                             Registration = "5AF5358",
-                            Size = 17
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 18,
-                            Parkingspot = 0,
+                            Parkingspot = 68,
                             Registration = "35AA351",
-                            Size = 18
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 19,
-                            Parkingspot = 0,
+                            Parkingspot = 69,
                             Registration = "55AN371",
-                            Size = 19
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 20,
-                            Parkingspot = 0,
+                            Parkingspot = 70,
                             Registration = "24AO379",
-                            Size = 20
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 21,
-                            Parkingspot = 0,
+                            Parkingspot = 71,
                             Registration = "64AR362",
-                            Size = 21
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 22,
-                            Parkingspot = 0,
+                            Parkingspot = 72,
                             Registration = "34AF518",
-                            Size = 22
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 23,
-                            Parkingspot = 0,
+                            Parkingspot = 73,
                             Registration = "38AQ555",
-                            Size = 23
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 24,
-                            Parkingspot = 0,
+                            Parkingspot = 74,
                             Registration = "24AI416",
-                            Size = 24
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 25,
-                            Parkingspot = 0,
+                            Parkingspot = 75,
                             Registration = "59AO966",
-                            Size = 25
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 26,
-                            Parkingspot = 0,
+                            Parkingspot = 76,
                             Registration = "34AT620",
-                            Size = 26
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 27,
-                            Parkingspot = 0,
+                            Parkingspot = 77,
                             Registration = "40AD140",
-                            Size = 27
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 28,
-                            Parkingspot = 0,
+                            Parkingspot = 78,
                             Registration = "30AG809",
-                            Size = 28
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 29,
-                            Parkingspot = 0,
+                            Parkingspot = 79,
                             Registration = "66AP991",
-                            Size = 29
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 30,
-                            Parkingspot = 0,
+                            Parkingspot = 80,
                             Registration = "18AD512",
-                            Size = 30
+                            Size = 3,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 31,
-                            Parkingspot = 0,
+                            Parkingspot = 81,
                             Registration = "33AX623",
-                            Size = 31
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 32,
-                            Parkingspot = 0,
+                            Parkingspot = 82,
                             Registration = "64AP580",
-                            Size = 32
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 33,
-                            Parkingspot = 0,
+                            Parkingspot = 83,
                             Registration = "13AY794",
-                            Size = 33
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 34,
-                            Parkingspot = 0,
+                            Parkingspot = 84,
                             Registration = "55AC734",
-                            Size = 34
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 35,
-                            Parkingspot = 0,
+                            Parkingspot = 85,
                             Registration = "30AD500",
-                            Size = 35
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 36,
-                            Parkingspot = 0,
+                            Parkingspot = 86,
                             Registration = "38AF650",
-                            Size = 36
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 37,
-                            Parkingspot = 0,
+                            Parkingspot = 87,
                             Registration = "6AM1722",
-                            Size = 37
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 38,
-                            Parkingspot = 0,
+                            Parkingspot = 88,
                             Registration = "11AP780",
-                            Size = 38
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 39,
-                            Parkingspot = 0,
+                            Parkingspot = 89,
                             Registration = "54AG156",
-                            Size = 39
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 40,
-                            Parkingspot = 0,
+                            Parkingspot = 90,
                             Registration = "61AY262",
-                            Size = 40
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 41,
-                            Parkingspot = 0,
+                            Parkingspot = 91,
                             Registration = "62AK646",
-                            Size = 41
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 42,
-                            Parkingspot = 0,
+                            Parkingspot = 92,
                             Registration = "45AO853",
-                            Size = 42
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 43,
-                            Parkingspot = 0,
+                            Parkingspot = 93,
                             Registration = "20AF377",
-                            Size = 43
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 44,
-                            Parkingspot = 0,
+                            Parkingspot = 94,
                             Registration = "30AQ301",
-                            Size = 44
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 45,
-                            Parkingspot = 0,
+                            Parkingspot = 95,
                             Registration = "62AZ570",
-                            Size = 45
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 46,
-                            Parkingspot = 0,
+                            Parkingspot = 96,
                             Registration = "61AS803",
-                            Size = 46
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 47,
-                            Parkingspot = 0,
+                            Parkingspot = 97,
                             Registration = "25AG915",
-                            Size = 47
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 48,
-                            Parkingspot = 0,
+                            Parkingspot = 98,
                             Registration = "12AR787",
-                            Size = 48
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 49,
-                            Parkingspot = 0,
+                            Parkingspot = 99,
                             Registration = "11AV356",
-                            Size = 49
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 50,
-                            Parkingspot = 0,
+                            Parkingspot = 100,
                             Registration = "51AX141",
-                            Size = 50
+                            Size = 2,
+                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 #pragma warning restore 612, 618
