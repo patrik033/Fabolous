@@ -10,9 +10,17 @@ namespace BussinessLogicLibrary
     {
 
 
-        public decimal CalculateCost(DateTime startTime, int costPerHour)
+        TimeSpan ParkedTime(DateTime startTime)
         {
             TimeSpan totalHours = (DateTime.Now - startTime);
+
+            return totalHours;
+        }
+
+
+        public decimal CalculateCost(DateTime startTime, int costPerHour)
+        {
+            TimeSpan totalHours = ParkedTime(startTime);
 
             decimal total = (decimal)Math.Round(totalHours.TotalHours * costPerHour);
 
