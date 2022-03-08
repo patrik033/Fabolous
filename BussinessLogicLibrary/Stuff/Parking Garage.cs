@@ -9,6 +9,7 @@ namespace BussinessLogicLibrary
 {
     public class Parking_Garage
     {        
-        public List<Parkingspot> Parkingspots { get; set; }
+        //TODO sätta till array vid instansiering
+        public Parkingspot Parkingspots { get; set; }
     }
 }

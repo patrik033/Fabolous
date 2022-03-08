@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BussinessLogicLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace BussinessLogicLibrary
 {
-    public class Motorcycle : IVehicle
+    public class Motorcycle : Vehicle
     {
-        public int Id { get; set; }
-        public string Registration { get; set; }             
-        public int Size { get; set; } = 2;
-        public DateTime StartTime { get; set; } = DateTime.Now;
-
-        public int Parkingspot { get; set; }
+        public override int Id { get; set; }
+        public override string Registration { get; set; }             
+        public  int Size { get; set; } = 2;
+        public override DateTime StartTime { get; set; } = DateTime.Now;
+        public override int Parkingspot { get; set; }
 
         
     }

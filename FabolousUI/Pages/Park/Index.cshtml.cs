@@ -9,7 +9,7 @@ namespace FabolousUI.Pages.Park
     public class IndexModel : PageModel
     {
         private readonly FabolousDbContext _context;
-        public IList<Car> Cars { get; set; }
+        public IList<Parkingspot> Cars { get; set; }
         private Car[] cars { get; set; }
 
         //page number variable
@@ -18,23 +18,34 @@ namespace FabolousUI.Pages.Park
 
         //page size variable
         [BindProperty(SupportsGet = true)]
-        public int S { get; set; } = 25;
+        public int S { get; set; } = 50;
         public int TotalRecords { get; set; } = 0;
 
+
+        public Parking_Garage Garage = new Parking_Garage();
+        public Garage_Functions GarageFunctions;
 
 
         public IndexModel(FabolousDbContext context)
         {
             _context = context;
+            GarageFunctions = new Garage_Functions(_context);
         }
         public void OnGet()
         {
-            TotalRecords = _context.cars.Count();
 
-            Cars = _context.cars
-                .Skip((P - 1) * S)
+            Garage.Parkingspots = GarageFunctions.InstanciateGarage(100);
+            Garage = GarageFunctions.GetParkedVehicles(Garage);
+
+
+            TotalRecords = Garage.Parkingspots.Count();
+
+            //Garage.Parkingspots = Garage.Parkingspots.Skip((P-1) * S).Take(S).ToList();
+
+            Cars = Garage.Parkingspots
+                .Skip((P-1) * S)
                 .Take(S)
-                .ToList();
+                .ToList(); 
 
         }
     }
