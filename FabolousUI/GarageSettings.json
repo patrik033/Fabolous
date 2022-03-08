@@ -7,10 +7,10 @@
     "Size": 2,
     "Cost": 10
   },
-  "ParkingSpot": {
+  "Parkingspot": {
     "Size": 4
   },
-  "ParkingGarage": {
+  "Parkinggarage": {
     "Size": 100
   }
 }
