@@ -25,8 +25,12 @@ namespace FabolousUI.Pages.Settings
 
         public IActionResult OnPost()
         {
-            jsonEditor.EditProperty(Field, Property, Value);
-            return RedirectToPage("Index");                                    
+            if (Property != null && Field != null)
+            {
+                jsonEditor.EditProperty(Field, Property, Value);
+                return RedirectToPage("Index");
+            }
+            return RedirectToPage("Index");
         }
         
     }

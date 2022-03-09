@@ -34,18 +34,18 @@ namespace FabolousUI.Pages.Park
         public void OnGet()
         {
 
-            Garage.Parkingspots = GarageFunctions.InstanciateGarage(100);
-            Garage = GarageFunctions.GetParkedVehicles(Garage);
+            //Garage.Parkingspots = GarageFunctions.InstanciateGarage(100);
+            //Garage = GarageFunctions.GetParkedVehicles(Garage);
 
 
-            TotalRecords = Garage.Parkingspots.Count();
+            //TotalRecords = Garage.Parkingspots.Count();
 
-            //Garage.Parkingspots = Garage.Parkingspots.Skip((P-1) * S).Take(S).ToList();
+            ////Garage.Parkingspots = Garage.Parkingspots.Skip((P-1) * S).Take(S).ToList();
 
-            Cars = Garage.Parkingspots
-                .Skip((P-1) * S)
-                .Take(S)
-                .ToList(); 
+            //Cars = Garage.Parkingspots
+            //    .Skip((P-1) * S)
+            //    .Take(S)
+            //    .ToList(); 
 
         }
     }

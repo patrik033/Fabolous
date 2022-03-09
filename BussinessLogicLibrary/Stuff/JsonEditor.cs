@@ -66,10 +66,10 @@ namespace BussinessLogicLibrary.Stuff
 
         public string ReturnAllTextClean()
         {
-            Regex regex = new Regex("[,.{}]");
+            Regex regex = new Regex("[,.{}\"]");
             string path = @"GarageSettings.json";
             string json = File.ReadAllText(path);
-            string output = regex.Replace(json, "");
+            string output = regex.Replace(json, " ");
             return output;
         }
     }

@@ -55,20 +55,20 @@ namespace DatabaseAccessLibrary
         //}
 
 
-        public Parking_Garage GetParking(List<Parking_Garage>[] parkingGarage)
-        {
-            //foreach (var vehicle in _db.cars)
-            //{
-            //    if(vehicle.Parkingspot != null && vehicle.Parkingspot != 0 && vehicle.Size <= garage.Parkingspots.Size)
-            //    {
-            //        if(garage.Parkingspots)
-            //    }
-            //}
+        //public Parking_Garage GetParking(List<Parking_Garage>[] parkingGarage)
+        //{
+        //    //foreach (var vehicle in _db.cars)
+        //    //{
+        //    //    if(vehicle.Parkingspot != null && vehicle.Parkingspot != 0 && vehicle.Size <= garage.Parkingspots.Size)
+        //    //    {
+        //    //        if(garage.Parkingspots)
+        //    //    }
+        //    //}
 
-            //for (int i = 0; i < garage; i++)
-            //{
+        //    //for (int i = 0; i < garage; i++)
+        //    //{
 
-            //}
-        }
+        //    //}
+        //}
     }
 }
