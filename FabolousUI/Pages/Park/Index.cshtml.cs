@@ -22,7 +22,7 @@ namespace FabolousUI.Pages.Park
         public int TotalRecords { get; set; } = 0;
 
 
-        public Parking_Garage Garage = new Parking_Garage();
+        public Parking_Garage Garage;
         public Garage_Functions GarageFunctions;
 
 
@@ -33,20 +33,18 @@ namespace FabolousUI.Pages.Park
         }
         public void OnGet()
         {
-
-            Garage.Parkingspots = GarageFunctions.InstanciateGarage(100);
+            Garage = GarageFunctions.InstanciateGarage(100);
             Garage = GarageFunctions.GetParkedVehicles(Garage);
 
 
-            TotalRecords = Garage.Parkingspots.Count();
+            TotalRecords = Garage.spots.Count();
 
-            //Garage.Parkingspots = Garage.Parkingspots.Skip((P-1) * S).Take(S).ToList();
+            Garage.spots = Garage.spots.Skip((P-1) * S).Take(S).ToList();
 
-            Cars = Garage.Parkingspots
-                .Skip((P-1) * S)
+            Cars = Garage.spots
+                .Skip((P - 1) * S)
                 .Take(S)
-                .ToList(); 
-
+                .ToList();
         }
     }
 }

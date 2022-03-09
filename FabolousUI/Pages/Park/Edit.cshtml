@@ -32,9 +32,9 @@
                 <th>
                     Registration number
                 </th>
-                <th>
+                @* <th>
                     Size
-                </th>
+                    </th>*@
                 <th>
                     Date
                 </th>
@@ -43,20 +43,36 @@
         </thead>
         <tbody>
             <tr>
-                <td width="15%">@Model.myCar.Registration </td>
-                <td width="15%">@Model.myCar.Size</td>
-              <td width="15%">@Model.myCar.StartTime</td>
-                <td>
+                @foreach (var line in Model.Garage.spots)
+                {
+                    @foreach (var num in line.Parked_Vehicles)
+                    {
+                        @if (num != null)
+                        {
+                            <td width="15%">@num.Registration </td>
+                            <td width="15%">@num.StartTime</td>
+                        }
+                    }
+
+
+
+
+
+                }
+                @*<td width="15%">@Model.myCar.Registration </td>
+                    <td width="15%">@Model.myCar.Size</td>
+                    <td width="15%">@Model.myCar.StartTime</td>*@
+                @* <td>
                     <a asp-page="EditVehicle" asp-route-id="@Model.myCar.Id" class="btn btn-primary mx-2">
-                        Edit
-                        <i class="bi-pencil-square"></i>
+                    Edit
+                    <i class="bi-pencil-square"></i>
                     </a>
 
                     <a asp-page="../Checkout/Index" asp-route-id="@Model.myCar.Id" class="btn btn-danger mx-2">
-                        Delete
-                        <i class="bi-trash-fill"></i>
+                    Delete
+                    <i class="bi-trash-fill"></i>
                     </a>
-                </td>
+                    </td>*@
             </tr>
         </tbody>
     </table>

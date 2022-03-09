@@ -12,17 +12,14 @@
 
 @{
     var numberOfColsNeeded = 5;
-    var totalCounter = Model.Garage.Parkingspots.Count();
+    var totalCounter = Model.Garage.spots.Count();
     var itemCounter = 1;
 }
 
     @{var parkingSpotCounter = 1;}
-@foreach (var value in  Model.Cars)
+@foreach (var value in  Model.Garage.spots)
 {
 
-    @foreach(var item in value.Parked_Vehicles)
-    {
-        
          if (itemCounter % numberOfColsNeeded == 1)
         {
         @:<div class="row" >
@@ -30,8 +27,9 @@
         }
     <div class="col-lg-2 col-md-4 col-sm-6 pb-3">
         <div class="gridBox" data-id="">
-            <div class="logo"> 
-                    <a asp-page="Edit" asp-route-id="@item" class="btn btn-outline-primary">@item.Key @item.Value </a> 
+            <div class="logo">
+             
+                    <a asp-page="Edit" asp-route-id="@value.Id" class="btn btn-outline-primary">@value.Id </a> 
             </div>
         </div>
     </div>   
@@ -42,7 +40,7 @@
         @:</div>
     }
     itemCounter++;
-    }
+    
 
 
 

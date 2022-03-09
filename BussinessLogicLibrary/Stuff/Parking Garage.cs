@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 namespace BussinessLogicLibrary
 {
     public class Parking_Garage
-    {        
+    {
         //TODO sätta till array vid instansiering
-        public Parkingspot Parkingspots { get; set; }
+        public List<Parkingspot> spots { get; set; } = new List<Parkingspot>();
+        public int Id { get; set; }
     }
 }
