@@ -2,14 +2,14 @@
 @model FabolousUI.Pages.Park.IndexModel
 
 
-
+@*<form method="post">*@
 <h1>Park page</h1>
 
 
 <hr />
 <br />
 <br />
-<form method="post">
+
 @{
     var numberOfColsNeeded = 5;
     var totalCounter = Model.Garage.spots.Count();
@@ -28,8 +28,7 @@
     <div class="col-lg-2 col-md-4 col-sm-6 pb-3">
         <div class="gridBox" data-id="">
             <div class="logo">
-             
-                    <Button asp-page="Edit" asp-route-id="@value.Id"  class="btn btn-outline-primary">@value.Id  </Button> 
+                    <a asp-page="Edit" asp-route-id="@value.Id" class="btn btn-outline-primary">@value.Id </a> 
             </div>
         </div>
     </div>   
@@ -65,4 +64,4 @@
 
 <br />
 <br />
-</form>
+@*</form>*@

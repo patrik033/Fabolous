@@ -57,7 +57,6 @@ namespace DatabaseAccessLibrary
         public Parking_Garage GetParkedVehicles(Parking_Garage parkingGarage)
         {
 
-
             foreach (var item in parkingGarage.spots)
             {
                 if (item.Size > item.CurrentSize)
