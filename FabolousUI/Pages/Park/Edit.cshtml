@@ -1,9 +1,6 @@
 ﻿@page
+@using BussinessLogicLibrary
 @model FabolousUI.Pages.Park.EditModel
-
-
-
-
 
 
 <div class="container p-3">
@@ -13,15 +10,24 @@
         </div>
 
         <div class="col-6">
-
-            <a asp-page="CreateCar" class="btn btn-outline-info ">
-                <i class="bi bi-emoji-heart-eyes"> &nbsp; Create New Car</i>
-            </a>
-
-
-            <a asp-page="CreateMotorcykle" class="btn btn-outline-info ms-3">
-                <i class="bi bi-emoji-smile"></i> &nbsp; Create New Motorcycle
-            </a>
+            @foreach (var line in Model.myNum)
+            {
+                if (line.CurrentSize == 0)
+                {
+                    <a asp-page="CreateCar" class="btn btn-outline-info ">
+                        <i class="bi bi-emoji-heart-eyes"> &nbsp; Create New Car</i>
+                    </a>
+                    <a asp-page="CreateMotorcykle" class="btn btn-outline-info ms-3">
+                        <i class="bi bi-emoji-smile"></i> &nbsp; Create New Motorcycle
+                    </a>
+                }
+                if(line.CurrentSize == 2)
+                {
+                     <a asp-page="CreateMotorcykle" class="btn btn-outline-info ms-3">
+                        <i class="bi bi-emoji-smile"></i> &nbsp; Create New Motorcycle
+                    </a>
+                }
+            }
         </div>
 
     </div>
@@ -32,9 +38,6 @@
                 <th>
                     Registration number
                 </th>
-                @* <th>
-                    Size
-                    </th>*@
                 <th>
                     Date
                 </th>
@@ -44,45 +47,41 @@
         <tbody>
             <tr>
 
-
-
                 @foreach (var line in Model.myNum)
                 {
                     @foreach (var line2 in line.Parked_Vehicles)
                     {
-                        if(line2 != null)
+                        if (line2 != null)
                         {
-                            
-                        <td width="15%">@line2.Registration </td>
-                        <td width="15%">@line2.StartTime</td>
+                            <td width="15%">@line2.Registration </td>
+                            <td width="15%">@line2.StartTime</td>
+                            <td>
+                                @if (line2.GetType() == typeof(Car))
+                                {
+                                    <a asp-page="../EditTypes/EditCar" asp-route-id="@line2.Id" class="btn btn-primary mx-2">
+                                        Edit
+                                        <i class="bi-pencil-square"></i>
+                                    </a>
+                                    <a asp-page="../Checkout/CheckoutCar" asp-route-id="@line2.Id" class="btn btn-danger mx-2">
+                                        Delete
+                                        <i class="bi-trash-fill"></i>
+                                    </a>
+                                }
+                                @if (line2.GetType() == typeof(Motorcycle))
+                                {
+                                    <a asp-page="../EditTypes/EditMotorcykle" asp-route-id="@line2.Id" class="btn btn-primary mx-2">
+                                        Edit
+                                        <i class="bi-pencil-square"></i>
+                                    </a>
+                                    <a asp-page="../Checkout/CheckoutMotorcykle" asp-route-id="@line2.Id" class="btn btn-danger mx-2">
+                                        Delete
+                                        <i class="bi-trash-fill"></i>
+                                    </a>
+                                }
+                            </td>
                         }
                     }
                 }
-                @*@foreach (var line in Model.Garage.spots.Where(x => x.Id == 17))
-                    {
-                    @foreach (var num in line.Parked_Vehicles)
-                    {
-                    @if (num != null)
-                    {
-                    <td width="15%">@num.Registration </td>
-                    <td width="15%">@num.StartTime</td>
-                    }
-                    }
-                    }*@
-                @*<td width="15%">@Model.myCar.Registration </td>
-                    <td width="15%">@Model.myCar.Size</td>
-                    <td width="15%">@Model.myCar.StartTime</td>*@
-                @* <td>
-                    <a asp-page="EditVehicle" asp-route-id="@Model.myCar.Id" class="btn btn-primary mx-2">
-                    Edit
-                    <i class="bi-pencil-square"></i>
-                    </a>
-
-                    <a asp-page="../Checkout/Index" asp-route-id="@Model.myCar.Id" class="btn btn-danger mx-2">
-                    Delete
-                    <i class="bi-trash-fill"></i>
-                    </a>
-                    </td>*@
             </tr>
         </tbody>
     </table>

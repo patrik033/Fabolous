@@ -2,7 +2,6 @@
 @model FabolousUI.Pages.Park.IndexModel
 
 
-@*<form method="post">*@
 <h1>Park page</h1>
 
 
@@ -23,15 +22,46 @@
          if (itemCounter % numberOfColsNeeded == 1)
         {
         @:<div class="row" >
-            <br />
-        }
+        <br />
+    }
+
+   
+
+    if(value.CurrentSize == 0)
+    {
     <div class="col-lg-2 col-md-4 col-sm-6 pb-3">
         <div class="gridBox" data-id="">
             <div class="logo">
-                    <a asp-page="Edit" asp-route-id="@value.Id" class="btn btn-outline-primary">@value.Id </a> 
+                    <a asp-page="Edit" asp-route-id="@value.Id" class="btn btn-info">@value.Id </a> 
             </div>
         </div>
-    </div>   
+        </div>
+    }
+    
+
+    else if(value.CurrentSize > 0 && value.CurrentSize < value.Size )
+    {
+        <div class="col-lg-2 col-md-4 col-sm-6 pb-3">
+        <div class="gridBox" data-id="">
+            <div class="logo">
+                    <a asp-page="Edit" asp-route-id="@value.Id" class="btn btn-primary">@value.Id </a> 
+            </div>
+        </div>
+        </div>
+    }
+
+    else if(value.CurrentSize == value.Size)
+    {
+        <div class="col-lg-2 col-md-4 col-sm-6 pb-3">
+        <div class="gridBox" data-id="">
+            <div class="logo">
+                    <a asp-page="Edit" asp-route-id="@value.Id" class="btn btn-danger">@value.Id </a> 
+            </div>
+        </div>
+        </div>
+    }
+
+
     parkingSpotCounter++;
 
     if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
@@ -39,10 +69,6 @@
         @:</div>
     }
     itemCounter++;
-
-    
-
-
 
 }
 
@@ -64,4 +90,3 @@
 
 <br />
 <br />
-@*</form>*@

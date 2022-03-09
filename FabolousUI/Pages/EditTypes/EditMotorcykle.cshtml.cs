@@ -3,32 +3,28 @@ using DatabaseAccessLibrary;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace FabolousUI.Pages.Park
+namespace FabolousUI.Pages.EditTypes
 {
-    [BindProperties]
-    public class EditVehicleModel : PageModel
+    public class EditMotorcykleModel : PageModel
     {
-
-
         private readonly FabolousDbContext _context;
-        public Car myCar { get; set; } = new Car();
+        public Motorcycle myCar { get; set; } = new Motorcycle();
 
-        public EditVehicleModel(FabolousDbContext context)
+        public EditMotorcykleModel(FabolousDbContext context)
         {
             _context = context;
         }
         public void OnGet(int id)
         {
-            myCar = _context.cars.FirstOrDefault(c => c.Id == id);
+            myCar = _context.motorcycles.FirstOrDefault(c => c.Id == id);
         }
 
         public async Task<IActionResult> OnPost()
         {
-            _context.cars.Update(myCar);
+            _context.motorcycles.Update(myCar);
             await _context.SaveChangesAsync();
             TempData["Success"] = "Vehicle edited successfully";
             return RedirectToPage("Index");
         }
-  
     }
 }

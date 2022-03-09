@@ -11,7 +11,8 @@ namespace FabolousUI.Pages.Park
     {
 
         private readonly FabolousDbContext _context;
-        //public Car myCar { get; set; } = new Car();
+        public Car myCar { get; set; } = new Car();
+        public Motorcycle Motorcycle { get; set; } = new Motorcycle();
 
         
         public IEnumerable<Parkingspot> myNum;
@@ -31,16 +32,6 @@ namespace FabolousUI.Pages.Park
             Garage = GarageFunctions.InstanciateGarage(100);
             Garage = GarageFunctions.GetParkedVehicles(Garage);
             myNum = Garage.spots.Where(x => x.Id == id);
-            //myCar = _context.cars.FirstOrDefault(c => c.Id == id);
         }
-
-        //public async Task<IActionResult> OnPost()
-        //{
-        //    _context.cars.Update(myCar);
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToPage("Index");
-        //}
-
-
     }
 }

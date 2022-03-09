@@ -17,11 +17,12 @@ namespace FabolousUI
 
             // Add services to the container.
             builder.Services.AddRazorPages();
-            garage = garage_Functions.InstanciateGarage(100);
             builder.Services.AddDbContext<FabolousDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
+            //garage = garage_Functions.InstanciateGarage(100);
+            //garage = garage_Functions.GetParkedVehicles(garage);
 
 
             var app = builder.Build();
