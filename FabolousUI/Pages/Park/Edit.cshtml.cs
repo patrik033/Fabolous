@@ -16,6 +16,7 @@ namespace FabolousUI.Pages.Park
 
 
         public Parking_Garage Garage;
+
         public Garage_Functions GarageFunctions;
 
 
@@ -26,8 +27,14 @@ namespace FabolousUI.Pages.Park
         }
         public void OnGet(int id)
         {
-            Garage = GarageFunctions.InstanciateGarage(100);
-            Garage = GarageFunctions.GetParkedVehicles(Garage);
+
+            Garage = Program.garage;
+
+
+
+
+            //Garage = GarageFunctions.InstanciateGarage(100);
+            //Garage = GarageFunctions.GetParkedVehicles(Garage);
 
             //myCar = _context.cars.FirstOrDefault(c => c.Id == id);
         }

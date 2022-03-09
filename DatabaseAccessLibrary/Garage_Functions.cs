@@ -10,12 +10,17 @@ namespace DatabaseAccessLibrary
 {
     public class Garage_Functions
     {
+        public int spotId { get; set; }
 
         private readonly FabolousDbContext _db;
         public Garage_Functions(FabolousDbContext db)
         {
 
             _db = db;
+        }
+        public Garage_Functions()
+        {
+
         }
 
         /// <summary>
@@ -55,18 +60,31 @@ namespace DatabaseAccessLibrary
 
             foreach (var item in parkingGarage.spots)
             {
-                var number = item.Id;
-                var selectedItem = _db.cars.Where(car => car.Parkingspot == number).FirstOrDefault();
-                item.Parked_Vehicles.Add(selectedItem);
-                item.CurrentSize += 4;
+                if (item.Size > item.CurrentSize)
+                {
+                    var number = item.Id;
+                    var selectedItem = _db.cars.Where(car => car.Parkingspot == number).FirstOrDefault();
+                    if (selectedItem != null && selectedItem.Size <= item.Size - item.CurrentSize)
+                    {
+                        item.Parked_Vehicles.Add(selectedItem);
+                        item.CurrentSize += 4;
+                    }
+                }
             }
 
             foreach (var item in parkingGarage.spots)
             {
-                var number = item.Id;
-                var selectedItem = _db.motorcycles.Where(car => car.Parkingspot == number).FirstOrDefault();
-                item.Parked_Vehicles.Add(selectedItem);
-                item.CurrentSize += 2;
+                if (item.Size > item.CurrentSize)
+                {
+                    var number = item.Id;
+                    var selectedItem = _db.motorcycles.Where(car => car.Parkingspot == number).FirstOrDefault();
+
+                    if (selectedItem != null && selectedItem.Size <= item.Size - item.CurrentSize)
+                    {
+                        item.Parked_Vehicles.Add(selectedItem);
+                        item.CurrentSize += 2;
+                    }
+                }
             }
             return parkingGarage;
 
@@ -90,6 +108,14 @@ namespace DatabaseAccessLibrary
             //    }
             //}
             //return garage;
+        }
+
+
+        public int GetParkedVehicles(int id)
+        {
+            spotId = id;
+
+            return id;
         }
     }
 }

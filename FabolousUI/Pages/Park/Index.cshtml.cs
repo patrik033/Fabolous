@@ -33,10 +33,8 @@ namespace FabolousUI.Pages.Park
         }
         public void OnGet()
         {
-            Garage = GarageFunctions.InstanciateGarage(100);
-            Garage = GarageFunctions.GetParkedVehicles(Garage);
-
-
+            Garage = Program.garage;
+            
             TotalRecords = Garage.spots.Count();
 
             Garage.spots = Garage.spots.Skip((P-1) * S).Take(S).ToList();
@@ -46,5 +44,6 @@ namespace FabolousUI.Pages.Park
                 .Take(S)
                 .ToList();
         }
+        
     }
 }
