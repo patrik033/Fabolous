@@ -16,6 +16,7 @@ namespace FabolousUI.Pages.Park
         
         public IEnumerable<Parkingspot> myNum;
         public Parking_Garage Garage;
+
         public Garage_Functions GarageFunctions;
 
 
