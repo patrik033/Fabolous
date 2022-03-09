@@ -1,0 +1,20 @@
+﻿@page
+@model FabolousUI.Pages.Shared.WrongParkingSpotCountModel
+@{
+}
+@{
+    ViewData["Title"] = "TooFewParkingSpots";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">You got one or more stored vehicles in parkingspots that do not exist!!</h2>
+
+
+
+<h3>Explanation</h3>
+<p>
+    Try changing the settings for parkingspot in <strong>Settings</strong> and set it to a higher number
+</p>
+<p>
+    If you got a parked vehicle in parkingspot 55 but the current size of parkingspots available only is 50, you will hit this page.
+</p>

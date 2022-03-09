@@ -14,10 +14,16 @@
     var numberOfColsNeeded = 5;
     var totalCounter = Model.Garage.spots.Count();
     var itemCounter = 1;
+   
 }
 
     @{var parkingSpotCounter = 1;}
-@foreach (var value in  Model.Garage.spots)
+
+
+
+    @{
+        
+         foreach (var value in  Model.Garage.spots)
 {
 
          if (itemCounter % numberOfColsNeeded == 1)
@@ -41,11 +47,10 @@
     itemCounter++;
 
     
-
-
-
+  
 }
 
+}
 
 <paging 
     page-no="Model.P"

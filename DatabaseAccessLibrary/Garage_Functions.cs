@@ -62,11 +62,14 @@ namespace DatabaseAccessLibrary
                 if (item.Size > item.CurrentSize)
                 {
                     var number = item.Id;
-                    var selectedItem = _db.cars.Where(car => car.Parkingspot == number).FirstOrDefault();
-                    if (selectedItem != null && selectedItem.Size <= item.Size - item.CurrentSize)
+                    if (_db.cars.Where(car => car.Parkingspot == number).Any())
                     {
-                        item.Parked_Vehicles.Add(selectedItem);
-                        item.CurrentSize += 4;
+                        var selectedItem = _db.cars.Where(car => car.Parkingspot == number).FirstOrDefault();
+                        if (selectedItem != null && selectedItem.Size <= item.Size - item.CurrentSize)
+                        {
+                            item.Parked_Vehicles.Add(selectedItem);
+                            item.CurrentSize += 4;
+                        }
                     }
                 }
             }
@@ -107,6 +110,23 @@ namespace DatabaseAccessLibrary
             //    }
             //}
             //return garage;
+        }
+
+        public int GetHighestParkingSpot(Parking_Garage garage)
+        {
+            int Max = 0;
+            
+            foreach (var car in _db.cars)
+            {
+                if (car.Parkingspot > Max)
+                    Max = car.Parkingspot;
+            }
+            foreach (var mc in _db.motorcycles)
+            {
+                if (mc.Parkingspot > Max)
+                    Max = mc.Parkingspot;
+            }
+            return Max;
         }
        
     }
