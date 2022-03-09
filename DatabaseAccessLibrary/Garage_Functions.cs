@@ -10,7 +10,7 @@ namespace DatabaseAccessLibrary
 {
     public class Garage_Functions
     {
-        public int spotId { get; set; }
+       
 
         private readonly FabolousDbContext _db;
         public Garage_Functions(FabolousDbContext db)
@@ -109,13 +109,6 @@ namespace DatabaseAccessLibrary
             //}
             //return garage;
         }
-
-
-        public int GetParkedVehicles(int id)
-        {
-            spotId = id;
-
-            return id;
-        }
+       
     }
 }

@@ -19,7 +19,7 @@ namespace FabolousUI.Pages.Park
 
         public Garage_Functions GarageFunctions;
 
-
+      
         public EditModel(FabolousDbContext context)
         {
             _context = context;

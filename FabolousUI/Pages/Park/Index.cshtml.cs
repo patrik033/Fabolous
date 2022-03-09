@@ -20,7 +20,8 @@ namespace FabolousUI.Pages.Park
         [BindProperty(SupportsGet = true)]
         public int S { get; set; } = 50;
         public int TotalRecords { get; set; } = 0;
-
+       
+       
 
         public Parking_Garage Garage;
         public Garage_Functions GarageFunctions;
@@ -39,11 +40,11 @@ namespace FabolousUI.Pages.Park
 
             Garage.spots = Garage.spots.Skip((P-1) * S).Take(S).ToList();
 
-            Cars = Garage.spots
-                .Skip((P - 1) * S)
-                .Take(S)
-                .ToList();
+            //Cars = Garage.spots
+            //    .Skip((P - 1) * S)
+            //    .Take(S)
+            //    .ToList();
         }
-        
+       
     }
 }
