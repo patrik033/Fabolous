@@ -9,7 +9,7 @@ namespace FabolousUI
     {
         static Garage_Functions garage_Functions = new Garage_Functions();
         public static Parking_Garage garage = new Parking_Garage();
-        
+
         public static void Main(string[] args)
         {
 
@@ -20,13 +20,11 @@ namespace FabolousUI
             builder.Services.AddDbContext<FabolousDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
-            //garage = garage_Functions.InstanciateGarage(100);
-            //garage = garage_Functions.GetParkedVehicles(garage);
-
+          
 
             var app = builder.Build();
-
+           
+           
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
@@ -43,7 +41,7 @@ namespace FabolousUI
             app.UseAuthorization();
 
             app.MapRazorPages();
-
+            
             app.Run();
         }
     }

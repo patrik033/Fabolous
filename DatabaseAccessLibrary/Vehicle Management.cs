@@ -71,6 +71,8 @@ namespace DatabaseAccessLibrary
             int count = 0;
             foreach(var item in parkingSpotList)
             {
+                
+
                 if (regex.IsMatch(item.GetType().GetProperty("Registration").GetValue(item).ToString()))
                 {
                     indexes.Add(count);
