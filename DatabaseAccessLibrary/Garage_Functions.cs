@@ -52,13 +52,15 @@ namespace DatabaseAccessLibrary
         public Parking_Garage GetParkedVehicles(Parking_Garage parkingGarage)
         {
 
-
             foreach (var item in parkingGarage.spots)
             {
                 var number = item.Id;
                 var selectedItem = _db.cars.Where(car => car.Parkingspot == number).FirstOrDefault();
                 item.Parked_Vehicles.Add(selectedItem);
-                item.CurrentSize += 4;
+                if (item != null)
+                {
+                    item.CurrentSize += 4;
+                }
             }
 
             foreach (var item in parkingGarage.spots)
@@ -66,7 +68,11 @@ namespace DatabaseAccessLibrary
                 var number = item.Id;
                 var selectedItem = _db.motorcycles.Where(car => car.Parkingspot == number).FirstOrDefault();
                 item.Parked_Vehicles.Add(selectedItem);
-                item.CurrentSize += 2;
+                if (item != null)
+                {
+                    item.CurrentSize += 2;
+
+                }
             }
             return parkingGarage;
 

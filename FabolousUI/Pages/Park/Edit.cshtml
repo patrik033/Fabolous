@@ -43,22 +43,32 @@
         </thead>
         <tbody>
             <tr>
-                @foreach (var line in Model.Garage.spots)
+
+
+
+                @foreach (var line in Model.myNum)
                 {
-                    @foreach (var num in line.Parked_Vehicles)
+                    @foreach (var line2 in line.Parked_Vehicles)
                     {
-                        @if (num != null)
+                        if(line2 != null)
                         {
-                            <td width="15%">@num.Registration </td>
-                            <td width="15%">@num.StartTime</td>
+                            
+                        <td width="15%">@line2.Registration </td>
+                        <td width="15%">@line2.StartTime</td>
                         }
                     }
-
-
-
-
-
                 }
+                @*@foreach (var line in Model.Garage.spots.Where(x => x.Id == 17))
+                    {
+                    @foreach (var num in line.Parked_Vehicles)
+                    {
+                    @if (num != null)
+                    {
+                    <td width="15%">@num.Registration </td>
+                    <td width="15%">@num.StartTime</td>
+                    }
+                    }
+                    }*@
                 @*<td width="15%">@Model.myCar.Registration </td>
                     <td width="15%">@Model.myCar.Size</td>
                     <td width="15%">@Model.myCar.StartTime</td>*@

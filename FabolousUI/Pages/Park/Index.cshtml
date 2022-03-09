@@ -28,14 +28,13 @@
     <div class="col-lg-2 col-md-4 col-sm-6 pb-3">
         <div class="gridBox" data-id="">
             <div class="logo">
-             
                     <a asp-page="Edit" asp-route-id="@value.Id" class="btn btn-outline-primary">@value.Id </a> 
             </div>
         </div>
     </div>   
     parkingSpotCounter++;
 
-    @*if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))*@
+    if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
     {
         @:</div>
     }

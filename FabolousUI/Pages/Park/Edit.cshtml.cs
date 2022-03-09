@@ -13,8 +13,8 @@ namespace FabolousUI.Pages.Park
         private readonly FabolousDbContext _context;
         //public Car myCar { get; set; } = new Car();
 
-
-
+        
+        public IEnumerable<Parkingspot> myNum;
         public Parking_Garage Garage;
         public Garage_Functions GarageFunctions;
 
@@ -23,12 +23,13 @@ namespace FabolousUI.Pages.Park
         {
             _context = context;
             GarageFunctions = new Garage_Functions(_context);
+            myNum = new List<Parkingspot>();
         }
         public void OnGet(int id)
         {
             Garage = GarageFunctions.InstanciateGarage(100);
             Garage = GarageFunctions.GetParkedVehicles(Garage);
-
+            myNum = Garage.spots.Where(x => x.Id == id);
             //myCar = _context.cars.FirstOrDefault(c => c.Id == id);
         }
 
