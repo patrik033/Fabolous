@@ -56,10 +56,10 @@
                 {
                     @foreach (var line2 in line.Parked_Vehicles)
                     {
-                        if (line2 != null)
-                        {
+                        <tr>
                             <td width="15%">@line2.Registration </td>
                             <td width="15%">@line2.StartTime</td>
+                            <td width="5%">@line2.Parkingspot</td>
                             <td>
                                 @if (line2.GetType() == typeof(Car))
                                 {
@@ -87,19 +87,20 @@
                                         Delete
                                         <i class="bi-trash-fill"></i>
                                     </a>
-                                    
+                                   
                                        
-                                    <a asp-page="Rerout_Index" asp-all-route-data ="" class="btn btn-secondary mx-2">
+                                    <a asp-page="Rerout_Index"  class="btn btn-secondary mx-2">
                                         Move
                                         <i class="bi bi-minecart-loaded"></i>
                                     </a>
                                 }
                             </td>
-                        }
-                    </tr>
+                        
+                            </tr>
+                    }
 
                 }
-            }
+            
 
         </tbody>
     </table>
