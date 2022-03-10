@@ -16,7 +16,6 @@
         <div class="col-6">
             @foreach (var line in Model.myNum)
             {
-
                 if (line.CurrentSize == 0)
                 {
                     <a asp-page="CreateCar" asp-route-id="@line.Id" class="btn btn-outline-info ">
@@ -95,13 +94,9 @@
                                     </a>
                                 }
                             </td>
-                        
                             </tr>
                     }
-
                 }
-            
-
         </tbody>
     </table>
 </div>
