@@ -3,6 +3,7 @@ using BussinessLogicLibrary.Stuff;
 using DatabaseAccessLibrary;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 
 namespace FabolousUI.Pages.Park
 {
@@ -35,13 +36,18 @@ namespace FabolousUI.Pages.Park
             _context = context;
             GarageFunctions = new Garage_Functions(_context);
         }
-        public IActionResult OnGet(Dictionary<string, string> d)
-        {     
+        public IActionResult OnGet(string passedObject)
+        {
 
-            foreach(var item in d)
+            MyVehicle = JsonConvert.DeserializeObject<Motorcycle>(passedObject);
+            if (MyVehicle == null)
+            {
+                return NotFound();
+            }
+            /*foreach(var item in d)
             {
                 MyVehicle=item.Value;
-            }
+            }*/
             
 
             Garage = GarageFunctions.InstanciateGarage(int.Parse(jsonEditor.ReadProperty("Parkinggarage","Size")));
