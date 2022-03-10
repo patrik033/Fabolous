@@ -1,6 +1,7 @@
 ﻿using BussinessLogicLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace BussinessLogicLibrary
     {
         public override int Id { get; set; }
         public int Size { get; set; } = 4;
+        //[RegularExpression(@"[\w]+")]
         public override string Registration { get; set; }
         public override DateTime StartTime { get; set; } = DateTime.Now;
         public override int Parkingspot { get; set; }

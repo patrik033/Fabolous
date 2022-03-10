@@ -11,7 +11,7 @@ namespace BussinessLogicLibrary
     {
         public override int Id { get; set; }
         public override string Registration { get; set; }             
-        public  int Size { get; set; } = 2;
+        public  int Size { get; } = 2;
         public override DateTime StartTime { get; set; } = DateTime.Now;
         public override int Parkingspot { get; set; }
 
