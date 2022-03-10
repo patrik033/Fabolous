@@ -40,10 +40,15 @@ namespace FabolousUI.Pages.Park
         {
 
             MyVehicle = JsonConvert.DeserializeObject<Motorcycle>(passedObject);
-            if (MyVehicle == null)
+            MyVehicle = JsonConvert.DeserializeObject<Car>(passedObject);
+            if (MyVehicle == typeof(Motorcycle))
             {
                 return NotFound();
             }
+            else if (MyVehicle == typeof(Car))
+            {
+                return NotFound();
+            }  
             /*foreach(var item in d)
             {
                 MyVehicle=item.Value;

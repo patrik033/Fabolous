@@ -71,8 +71,8 @@
                                         Delete
                                         <i class="bi-trash-fill"></i>
                                     </a>
-                                      
-                                    <a asp-page="Rerout_Index" asp-route-data="@line2" class="btn btn-secondary mx-2">
+                                     Dictionary<string, string> dv = new Dictionary<string, string>{{"passedObject", JsonConvert.SerializeObject(line2)}}; 
+                                    <a asp-page="Rerout_Index" asp-all-route-data="dv" class="btn btn-secondary mx-2">
                                         Move
                                         <i class="bi bi-minecart-loaded"></i>
                                     </a>
