@@ -10,12 +10,11 @@ namespace DatabaseAccessLibrary
 {
     public class Garage_Functions
     {
-       
+
 
         private readonly FabolousDbContext _db;
         public Garage_Functions(FabolousDbContext db)
         {
-
             _db = db;
         }
         public Garage_Functions()
@@ -76,46 +75,33 @@ namespace DatabaseAccessLibrary
 
             foreach (var item in parkingGarage.spots)
             {
+
                 if (item.Size > item.CurrentSize)
                 {
                     var number = item.Id;
-                    var selectedItem = _db.motorcycles.Where(car => car.Parkingspot == number).FirstOrDefault();
 
-                    if (selectedItem != null && selectedItem.Size <= item.Size - item.CurrentSize)
+                    if (_db.motorcycles.Where(x => x.Parkingspot == number).Any())
                     {
-                        item.Parked_Vehicles.Add(selectedItem);
-                        item.CurrentSize += 2;
+                        var selectedItem = _db.motorcycles.Where(car => car.Parkingspot == number).Take(2).ToList();
+                        foreach (var lists in selectedItem)
+                        {
+                            if (lists != null /*&&*/ /*item.Size <= lists.Size *//*- item.CurrentSize*/)
+                            {
+                                item.Parked_Vehicles.Add(lists);
+                                item.CurrentSize += 2;
+                            }
+                        }
                     }
                 }
             }
             return parkingGarage;
 
-
-            //foreach (var vehicle in _db.cars)
-            //{
-            //    if (vehicle.Parkingspot != null && vehicle.Parkingspot != 0 && vehicle.Size <= garage.spots[vehicle.Parkingspot - 1].Size)
-            //    {
-            //        if(parkingGarage.spots)
-
-            //        //parkingGarage.[vehicle.Parkingspot - 1].Parked_Vehicles.Add(vehicle.Registration, vehicle);
-            //        //garage.Parkingspots[vehicle.Parkingspot - 1].Size -= vehicle.Size;
-            //    }
-            //}
-            //foreach (var vehicle in _db.motorcycles)
-            //{
-            //    if (vehicle.Parkingspot != null && vehicle.Parkingspot != 0 && vehicle.Size <= garage.Parkingspots[vehicle.Parkingspot - 1].Size)
-            //    {
-            //        garage.Parkingspots[vehicle.Parkingspot - 1].Parked_Vehicles.Add(vehicle.Registration, vehicle);
-            //        garage.Parkingspots[vehicle.Parkingspot - 1].Size -= vehicle.Size;
-            //    }
-            //}
-            //return garage;
         }
 
         public int GetHighestParkingSpot(Parking_Garage garage)
         {
             int Max = 0;
-            
+
             foreach (var car in _db.cars)
             {
                 if (car.Parkingspot > Max)
@@ -128,6 +114,6 @@ namespace DatabaseAccessLibrary
             }
             return Max;
         }
-       
+
     }
 }

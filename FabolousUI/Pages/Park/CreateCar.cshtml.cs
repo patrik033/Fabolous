@@ -11,15 +11,16 @@ namespace FabolousUI.Pages.Park
     {
         private readonly FabolousDbContext _context;
         public Car myCar { get; set; } = new Car();
+        public int Id { get; set; }
 
         public CreateModel(FabolousDbContext context)
         {
             _context = context;
         }
 
-        public void OnGet()
+        public void OnGet(int id)
         {
-
+           Id = id;
         }
 
         public async Task<IActionResult> OnPost()

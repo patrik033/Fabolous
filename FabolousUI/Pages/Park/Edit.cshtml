@@ -7,6 +7,7 @@
 
 
 <div class="container p-3">
+    <input hidden="hidden" asp-for="@Model.myNum" />
     <div class="row pt-4">
         <div class="col-6">
             <h2 class="text-primary">Parked Vehicles</h2>
@@ -15,18 +16,19 @@
         <div class="col-6">
             @foreach (var line in Model.myNum)
             {
+
                 if (line.CurrentSize == 0)
                 {
-                    <a asp-page="CreateCar" class="btn btn-outline-info ">
+                    <a asp-page="CreateCar" asp-route-id="@line.Id" class="btn btn-outline-info ">
                         <i class="bi bi-emoji-heart-eyes"> &nbsp; Create New Car</i>
                     </a>
-                    <a asp-page="CreateMotorcykle" class="btn btn-outline-info ms-3">
+                    <a asp-page="CreateMotorcykle" asp-route-id="@line.Id" class="btn btn-outline-info ms-3">
                         <i class="bi bi-emoji-smile"></i> &nbsp; Create New Motorcycle
                     </a>
                 }
-                if(line.CurrentSize == 2)
+                if (line.CurrentSize == 2)
                 {
-                     <a asp-page="CreateMotorcykle" class="btn btn-outline-info ms-3">
+                    <a asp-page="CreateMotorcykle" asp-route-id="@line.Id" class="btn btn-outline-info ms-3">
                         <i class="bi bi-emoji-smile"></i> &nbsp; Create New Motorcycle
                     </a>
                 }
@@ -44,20 +46,20 @@
                 <th>
                     Date
                 </th>
+                <th>ParkingSpot</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
 
                 @foreach (var line in Model.myNum)
                 {
                     @foreach (var line2 in line.Parked_Vehicles)
                     {
-                        if (line2 != null)
-                        {
+                        <tr>
                             <td width="15%">@line2.Registration </td>
                             <td width="15%">@line2.StartTime</td>
+                            <td width="5%">@line2.Parkingspot</td>
                             <td>
                                 @if (line2.GetType() == typeof(Car))
                                 {
@@ -94,10 +96,13 @@
                                     </a>
                                 }
                             </td>
-                        }
+                        
+                            </tr>
                     }
+
                 }
-            </tr>
+            
+
         </tbody>
     </table>
 </div>
