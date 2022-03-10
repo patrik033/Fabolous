@@ -15,8 +15,6 @@ namespace FabolousUI.Pages.Settings
         [BindProperty]
         public int Value { get; set; }
 
-       
-
 
         public void OnGet()
         {

@@ -14,13 +14,41 @@ namespace BussinessLogicLibrary
         {
             TimeSpan totalHours = (DateTime.Now - startTime);
 
+
             return totalHours;
         }
 
 
+
+        public string ParkedTimeToScreen(DateTime startTime)
+        {
+            TimeSpan totalTime = (DateTime.Now - startTime);
+            int days = totalTime.Days;
+            int hours = totalTime.Hours;
+            int minutes = totalTime.Minutes;
+            string totalCalculatedTime = $"Dagar: {days}   Timmar: {hours}   Minuter: {minutes}";
+            return totalCalculatedTime;
+        }
+
+        //public decimal CalculateCost(DateTime startTime, int costPerHour)
+        //{
+        //    TimeSpan totalHours = ParkedTime(startTime);
+
+        //    decimal total = (decimal)Math.Round(totalHours.TotalHours * costPerHour);
+
+        //    total = Math.Round(total - (costPerHour / 6));
+
+        //    if (total > 0)
+
+        //        return total;
+        //    else
+        //        return 0;
+
+        //}
+
         public decimal CalculateCost(DateTime startTime, int costPerHour)
         {
-            TimeSpan totalHours = ParkedTime(startTime);
+            TimeSpan totalHours = (DateTime.Now - startTime);
 
             decimal total = (decimal)Math.Round(totalHours.TotalHours * costPerHour);
 
@@ -29,6 +57,7 @@ namespace BussinessLogicLibrary
             if (total > 0)
 
                 return total;
+
             else
                 return 0;
 

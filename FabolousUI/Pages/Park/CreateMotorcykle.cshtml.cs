@@ -9,6 +9,7 @@ namespace FabolousUI.Pages.Park
     public class CreateMotorcykleModel : PageModel
     {
         private readonly FabolousDbContext _context;
+        public int Id { get; set; }
         public Motorcycle myMc { get; set; } = new Motorcycle();
 
         public CreateMotorcykleModel(FabolousDbContext context)
@@ -16,14 +17,16 @@ namespace FabolousUI.Pages.Park
             _context = context;
         }
 
-        public void OnGet()
+        public void OnGet(int id)
         {
-
+            Id = id;
         }
 
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPost(int id)
         {
             //TODO add toaster for both create car and create mc
+
+           
             await _context.motorcycles.AddAsync(myMc);
             await _context.SaveChangesAsync();
             return RedirectToPage("Index");
