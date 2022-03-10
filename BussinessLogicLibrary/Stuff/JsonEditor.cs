@@ -72,5 +72,18 @@ namespace BussinessLogicLibrary.Stuff
             string output = regex.Replace(json, " ");
             return output;
         }
+
+        public string JsonSerializer (object vehicle)
+        {
+            string output = JsonSerializer(vehicle);
+            return output;                       
+        }
+        public object JsonDeserializer(string vehicle)
+        {
+            object output = JsonDeserializer(vehicle);
+            return output;
+        }
+
+
     }
 }
