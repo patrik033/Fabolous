@@ -12,9 +12,10 @@ namespace FabolousUI.Pages.Park
     {
         private readonly FabolousDbContext _context;
         public IList<Parkingspot> Cars { get; set; }
-        private Car car { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public dynamic MyVehicle { get; set; }
 
-        public Motorcycle Mc { get; set; }
+
 
         //page number variable
         [BindProperty(SupportsGet = true)]
@@ -26,7 +27,8 @@ namespace FabolousUI.Pages.Park
         public int TotalRecords { get; set; } = 0;
         
         public int StoredVehicles { get; set; }
-        public object MyVehicle { get; set; }
+        
+        
         public Parking_Garage Garage;
         public Garage_Functions GarageFunctions;
         public JsonEditor jsonEditor = new JsonEditor();
@@ -36,20 +38,22 @@ namespace FabolousUI.Pages.Park
             _context = context;
             GarageFunctions = new Garage_Functions(_context);
         }
-        public IActionResult OnGet(string passedObject)
+        public IActionResult OnGet(Dictionary<string, string> passedObject)
         {
 
-            MyVehicle = JsonConvert.DeserializeObject<Motorcycle>(passedObject);
-            if (MyVehicle == null)
-            {
-                return NotFound();
-            }
-            /*foreach(var item in d)
-            {
-                MyVehicle=item.Value;
-            }*/
             
-
+                    if (passedObject.Where(x => x.Key == "Motorcycle").FirstOrDefault().Key.Any())
+                    {
+                        MyVehicle = JsonConvert.DeserializeObject<Motorcycle>(passedObject.Where(x => x.Key == "Motorcycle").FirstOrDefault().Value);
+                    }
+                    else if (passedObject.Where(x => x.Key == "Motorcycle").FirstOrDefault().Key.Any())
+                    {
+                        MyVehicle = JsonConvert.DeserializeObject<Car>(passedObject.Where(x => x.Key == "Car").FirstOrDefault().Value);
+                    }
+                
+           
+                                           
+            
             Garage = GarageFunctions.InstanciateGarage(int.Parse(jsonEditor.ReadProperty("Parkinggarage","Size")));
             Garage = GarageFunctions.GetParkedVehicles(Garage);
             

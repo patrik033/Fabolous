@@ -82,5 +82,20 @@ namespace DatabaseAccessLibrary
             return indexes;   
         }
         
+        object FindVehicleToRelocate(string regNumber)
+        {
+                var mcQ = _db.motorcycles.Find(regNumber);
+                var carQ = _db.cars.Find(regNumber);
+                if (mcQ == null)
+                {
+                    return carQ;
+                }
+                else if (carQ == null)
+                {
+                    return mcQ;
+                }
+                return "Not found"; 
+        }
+        
     }
 }
