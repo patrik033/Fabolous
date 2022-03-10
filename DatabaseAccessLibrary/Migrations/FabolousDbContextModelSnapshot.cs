@@ -463,9 +463,6 @@ namespace DatabaseAccessLibrary.Migrations
                     b.Property<string>("Registration")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Size")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
 
@@ -479,7 +476,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 1,
                             Parkingspot = 51,
                             Registration = "19AX641",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -487,7 +483,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 2,
                             Parkingspot = 52,
                             Registration = "55AR583",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -495,7 +490,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 3,
                             Parkingspot = 53,
                             Registration = "23AH141",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -503,7 +497,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 4,
                             Parkingspot = 54,
                             Registration = "7AR1649",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -511,7 +504,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 5,
                             Parkingspot = 55,
                             Registration = "52AD117",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -519,7 +511,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 6,
                             Parkingspot = 56,
                             Registration = "35AA969",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -527,7 +518,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 7,
                             Parkingspot = 57,
                             Registration = "35AZ101",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -535,7 +525,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 8,
                             Parkingspot = 58,
                             Registration = "26AA587",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -543,7 +532,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 9,
                             Parkingspot = 59,
                             Registration = "51AT445",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -551,7 +539,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 10,
                             Parkingspot = 60,
                             Registration = "26AI615",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -559,7 +546,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 11,
                             Parkingspot = 61,
                             Registration = "57AT653",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -567,7 +553,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 12,
                             Parkingspot = 62,
                             Registration = "62AB104",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -575,7 +560,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 13,
                             Parkingspot = 63,
                             Registration = "21AJ791",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -583,7 +567,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 14,
                             Parkingspot = 64,
                             Registration = "52AZ687",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -591,7 +574,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 15,
                             Parkingspot = 65,
                             Registration = "23AL427",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -599,7 +581,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 16,
                             Parkingspot = 66,
                             Registration = "38AI537",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -607,7 +588,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 17,
                             Parkingspot = 67,
                             Registration = "5AF5358",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -615,7 +595,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 18,
                             Parkingspot = 68,
                             Registration = "35AA351",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -623,7 +602,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 19,
                             Parkingspot = 69,
                             Registration = "55AN371",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -631,7 +609,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 20,
                             Parkingspot = 70,
                             Registration = "24AO379",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -639,7 +616,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 21,
                             Parkingspot = 71,
                             Registration = "64AR362",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -647,7 +623,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 22,
                             Parkingspot = 72,
                             Registration = "34AF518",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -655,7 +630,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 23,
                             Parkingspot = 73,
                             Registration = "38AQ555",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -663,7 +637,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 24,
                             Parkingspot = 74,
                             Registration = "24AI416",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -671,7 +644,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 25,
                             Parkingspot = 75,
                             Registration = "59AO966",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -679,7 +651,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 26,
                             Parkingspot = 76,
                             Registration = "34AT620",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -687,7 +658,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 27,
                             Parkingspot = 77,
                             Registration = "40AD140",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -695,7 +665,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 28,
                             Parkingspot = 78,
                             Registration = "30AG809",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -703,7 +672,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 29,
                             Parkingspot = 79,
                             Registration = "66AP991",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -711,7 +679,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 30,
                             Parkingspot = 80,
                             Registration = "18AD512",
-                            Size = 3,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -719,7 +686,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 31,
                             Parkingspot = 81,
                             Registration = "33AX623",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -727,7 +693,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 32,
                             Parkingspot = 82,
                             Registration = "64AP580",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -735,7 +700,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 33,
                             Parkingspot = 83,
                             Registration = "13AY794",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -743,7 +707,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 34,
                             Parkingspot = 84,
                             Registration = "55AC734",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -751,7 +714,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 35,
                             Parkingspot = 85,
                             Registration = "30AD500",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -759,7 +721,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 36,
                             Parkingspot = 86,
                             Registration = "38AF650",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -767,7 +728,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 37,
                             Parkingspot = 87,
                             Registration = "6AM1722",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -775,7 +735,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 38,
                             Parkingspot = 88,
                             Registration = "11AP780",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -783,7 +742,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 39,
                             Parkingspot = 89,
                             Registration = "54AG156",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -791,7 +749,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 40,
                             Parkingspot = 90,
                             Registration = "61AY262",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -799,7 +756,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 41,
                             Parkingspot = 91,
                             Registration = "62AK646",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -807,7 +763,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 42,
                             Parkingspot = 92,
                             Registration = "45AO853",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -815,7 +770,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 43,
                             Parkingspot = 93,
                             Registration = "20AF377",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -823,7 +777,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 44,
                             Parkingspot = 94,
                             Registration = "30AQ301",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -831,7 +784,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 45,
                             Parkingspot = 95,
                             Registration = "62AZ570",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -839,7 +791,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 46,
                             Parkingspot = 96,
                             Registration = "61AS803",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -847,7 +798,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 47,
                             Parkingspot = 97,
                             Registration = "25AG915",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -855,7 +805,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 48,
                             Parkingspot = 98,
                             Registration = "12AR787",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -863,7 +812,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 49,
                             Parkingspot = 99,
                             Registration = "11AV356",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -871,7 +819,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 50,
                             Parkingspot = 100,
                             Registration = "51AX141",
-                            Size = 2,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });

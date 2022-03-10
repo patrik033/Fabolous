@@ -20,15 +20,19 @@ namespace FabolousUI.Pages.Park
 
         public void OnGet(int id)
         {
-           Id = id;
+            Id = id;
         }
 
         public async Task<IActionResult> OnPost()
         {
             //TODO add toaster for both create car and create mc
-            await _context.cars.AddAsync(myCar);
-            await _context.SaveChangesAsync();
-            return RedirectToPage("Index");
+           
+       
+                await _context.cars.AddAsync(myCar);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("Index");
+           
+
         }
     }
 }
