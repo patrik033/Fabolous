@@ -6,6 +6,11 @@
     <div class="border p-3 mt-4 col-8">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+
+
+
+        <input type="hidden" asp-for="@Model.myMc.Id" />
+        <input asp-for="@Model.myMc.Size" type="hidden" class="form-control"/>
         <input type="hidden" asp-for="@Model.myMc.Parkingspot" value="@Model.Id" />
         <input type="hidden" asp-for="@Model.myMc.StartTime" value="@DateTime.Now" />
         <div class="row pb-2">

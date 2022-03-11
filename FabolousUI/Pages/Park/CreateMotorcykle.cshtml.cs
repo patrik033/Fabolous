@@ -26,10 +26,14 @@ namespace FabolousUI.Pages.Park
         {
             //TODO add toaster for both create car and create mc
 
-           
-            await _context.motorcycles.AddAsync(myMc);
-            await _context.SaveChangesAsync();
-            return RedirectToPage("Index");
+            if (ModelState.IsValid)
+            {
+                await _context.motorcycles.AddAsync(myMc);
+                await _context.SaveChangesAsync();
+                TempData["Success"] = "Motorcykle created successfully";
+                return RedirectToPage("Index");
+            }
+            return Page();
         }
     }
 }

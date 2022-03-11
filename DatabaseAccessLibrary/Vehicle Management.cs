@@ -96,6 +96,28 @@ namespace DatabaseAccessLibrary
                 }
                 return "Not found"; 
         }
+        void UpdateMovedVehicle(string currentObjectRegistration, int newSpot)
+        {
+            var findMc = _db.motorcycles.Find(currentObjectRegistration);
+            var findCar = _db.cars.Find(currentObjectRegistration); 
+            if (findMc == null)
+            {
+                //uppdatera bil
+                findCar = new Car { Parkingspot = newSpot };
+                _db.cars.Attach(findCar).Property(x => x.Parkingspot).IsModified = true;
+                _db.SaveChanges();
+                
+            }
+            else if (findCar == null)
+            {
+                //uppdatera mc
+                findMc = new Motorcycle { Parkingspot = newSpot };
+                _db.motorcycles.Attach(findMc).Property(x => x.Parkingspot).IsModified = true;
+                _db.SaveChanges();
+            }
+            
+
+        }
         
     }
 }

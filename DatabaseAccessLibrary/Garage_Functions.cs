@@ -85,7 +85,7 @@ namespace DatabaseAccessLibrary
                         var selectedItem = _db.motorcycles.Where(car => car.Parkingspot == number).Take(2).ToList();
                         foreach (var vehicle in selectedItem)
                         {
-                            if (vehicle != null && spot.Size >= vehicle.Size + spot.CurrentSize)
+                            if (vehicle != null /*&& spot.Size >= vehicle.Size + spot.CurrentSize*/)
                             {
                                 spot.Parked_Vehicles.Add(vehicle);
                                 spot.CurrentSize += 2;
@@ -98,19 +98,27 @@ namespace DatabaseAccessLibrary
 
         }
 
-        public int GetHighestParkingSpot(Parking_Garage garage)
+        public int GetHighestParkingSpot()
         {
             int Max = 0;
 
             foreach (var car in _db.cars)
             {
-                if (car.Parkingspot > Max)
-                    Max = car.Parkingspot;
+                if (_db.cars != null)
+                {
+
+                    if (car.Parkingspot > Max)
+                        Max = car.Parkingspot;
+                }
             }
             foreach (var mc in _db.motorcycles)
             {
-                if (mc.Parkingspot > Max)
-                    Max = mc.Parkingspot;
+                if (_db.motorcycles != null)
+                {
+
+                    if (mc.Parkingspot > Max)
+                        Max = mc.Parkingspot;
+                }
             }
             return Max;
         }

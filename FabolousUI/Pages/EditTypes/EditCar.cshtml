@@ -1,13 +1,14 @@
 ﻿@page
-@model FabolousUI.Pages.Park.EditVehicleModel
+@model FabolousUI.Pages.EditTypes.EditVehicleModel
 
 
 <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="@Model.myCar.Id" />
-    <input type="hidden" asp-for="@Model.myCar.Parkingspot" value="@Model.myCar.Id" />
-    
-    
+    <input type="hidden" asp-for="@Model.myCar.Parkingspot" value="@Model.myCar.Parkingspot" />
+
+
+
     <div class="border p-3 mt-4 col-8 container-fluid">
         <div class="row pb-2">
             <h2 class="text-primary pl-3">Edit Category</h2>
@@ -21,10 +22,16 @@
         <div class="form-group">
             <label asp-for="myCar.Registration"></label>
             <input asp-for="myCar.Registration" class="form-control" />
-        @*    <span asp-validation-for=myCar class="text-danger"></span>*@
+            <span asp-validation-for=myCar.Registration class="text-danger"></span>
         </div>
 
         <button type="submit" class="btn btn-primary" style="width:150px;">Edit</button>
         <a class="btn btn-primary ms-2" asp-page="../Park/Index">Back to list</a>
     </div>
 </form>
+
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+}
