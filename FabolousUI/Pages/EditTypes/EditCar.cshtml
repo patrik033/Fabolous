@@ -21,10 +21,16 @@
         <div class="form-group">
             <label asp-for="myCar.Registration"></label>
             <input asp-for="myCar.Registration" class="form-control" />
-        @*    <span asp-validation-for=myCar class="text-danger"></span>*@
+            <span asp-validation-for=myCar.Registration class="text-danger"></span>
         </div>
 
         <button type="submit" class="btn btn-primary" style="width:150px;">Edit</button>
         <a class="btn btn-primary ms-2" asp-page="../Park/Index">Back to list</a>
     </div>
 </form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
