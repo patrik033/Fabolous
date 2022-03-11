@@ -11,14 +11,13 @@ namespace BussinessLogicLibrary
     public class Motorcycle : Vehicle
     {
         public override int Id { get; set; }
+        public  int Size { get; } = 2;
         [Required(ErrorMessage = "Please provide a registration number")]
         [RegularExpression(@"[\d\w\s-]+", ErrorMessage = "Please use only letter, numbers, dash or space")]
         public override string Registration { get; set; }             
-        public  int Size { get; } = 2;
         public override DateTime StartTime { get; set; } = DateTime.Now;
         public override int Parkingspot { get; set; }
 
-        
     }
    
 }

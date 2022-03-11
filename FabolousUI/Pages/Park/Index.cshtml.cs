@@ -42,7 +42,7 @@ namespace FabolousUI.Pages.Park
             
             TotalRecords = Garage.spots.Count();
 
-            if (TotalRecords < GarageFunctions.GetHighestParkingSpot(Garage))
+            if (TotalRecords < GarageFunctions.GetHighestParkingSpot())
             {
                 return RedirectToPage("../WrongParkingSpotCount");
 
