@@ -3,7 +3,7 @@
 
 @using Newtonsoft.Json
 
-@model FabolousUI.Pages.Park.EditModel
+@model FabolousUI.Pages.Park.Search_Result
 
 
 <div class="container p-3">
@@ -11,28 +11,7 @@
     <div class="row pt-4">
         <div class="col-6">
             <h2 class="text-primary">Parked Vehicles</h2>
-        </div>
-
-        <div class="col-6">
-            @foreach (var line in Model.myNum)
-            {
-                if (line.CurrentSize == 0)
-                {
-                    <a asp-page="CreateCar" asp-route-id="@line.Id" class="btn btn-outline-info ">
-                        <i class="bi bi-emoji-heart-eyes"> &nbsp; Create New Car</i>
-                    </a>
-                    <a asp-page="CreateMotorcykle" asp-route-id="@line.Id" class="btn btn-outline-info ms-3">
-                        <i class="bi bi-emoji-smile"></i> &nbsp; Create New Motorcycle
-                    </a>
-                }
-                if (line.CurrentSize == 2)
-                {
-                    <a asp-page="CreateMotorcykle" asp-route-id="@line.Id" class="btn btn-outline-info ms-3">
-                        <i class="bi bi-emoji-smile"></i> &nbsp; Create New Motorcycle
-                    </a>
-                }
-            }
-        </div>
+        </div>      
 
     </div>
     <br /><br />
