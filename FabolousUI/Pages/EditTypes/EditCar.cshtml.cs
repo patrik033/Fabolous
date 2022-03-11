@@ -24,10 +24,15 @@ namespace FabolousUI.Pages.Park
 
         public async Task<IActionResult> OnPost()
         {
+            if (ModelState.IsValid)
+            {
+
             _context.cars.Update(myCar);
             await _context.SaveChangesAsync();
             TempData["Success"] = "Vehicle edited successfully";
             return RedirectToPage("../Park/Index");
+            }
+            return Page();
         }
   
     }

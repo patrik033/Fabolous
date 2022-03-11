@@ -21,10 +21,15 @@ namespace FabolousUI.Pages.EditTypes
 
         public async Task<IActionResult> OnPost()
         {
-            _context.motorcycles.Update(myCar);
-            await _context.SaveChangesAsync();
-            TempData["Success"] = "Vehicle edited successfully";
-            return RedirectToPage("Index");
+            if (ModelState.IsValid)
+            {
+
+                _context.motorcycles.Update(myCar);
+                await _context.SaveChangesAsync();
+                TempData["Success"] = "Motorcykle edited successfully";
+                return RedirectToPage("../Park/Index");
+            }
+            return Page();
         }
     }
 }

@@ -12,18 +12,35 @@ namespace BussinessLogicLibrary.Stuff
     public class JsonEditor
     {
         /// <summary>
-        /// Ange fordonstyp och vilket fält du vill läsa av, Teckenkänslig!
+        /// Ange fordonstyp och vilket fält du vill läsa av
         /// </summary>
         /// <param name="field"></param>
         /// <param name="field"></param>
         /// <returns></returns>
-        public string ReadProperty(string field, string property)
+        public string ReadProperty(string property, string field)
         {
             string json = File.ReadAllText(@"GarageSettings.json");
 
             dynamic jsonObject = JsonConvert.DeserializeObject(json);
 
-            return jsonObject[field][property];
+            if (property.ToLower() == "car" || property.ToLower() == "motorcycle")
+            {
+                if (field.ToLower() == "size" || field.ToLower() == "cost")
+                {
+                    return jsonObject[char.ToUpper(property[0]) + property.Substring(1)][char.ToUpper(field[0]) + field.Substring(1)];
+                }
+                else return String.Empty;
+            }
+            else if (property.ToLower() == "parkingspot" || property.ToLower() == "parkinggarage")
+            {
+                if (field.ToLower() == "size")
+                {
+                    return jsonObject[char.ToUpper(property[0]) + property.Substring(1)][char.ToUpper(field[0]) + field.Substring(1)];
+
+                }
+                else return String.Empty;
+            }
+            return String.Empty;
         }
         /// <summary>
         /// Ange cilket fordon du vill ändra, vilket fält och vad det nya värdet ska bli, VAR NOGRANN! Teckenkänsliga fält och värdet måste vara av rätt typ!, ska det vara en int, då ska den skickas in som en int!
