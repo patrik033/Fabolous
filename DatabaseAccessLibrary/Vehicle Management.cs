@@ -94,14 +94,14 @@ namespace DatabaseAccessLibrary
                 var vehicleList = new List<object>();   
                 var mcQ =  _db.motorcycles.Where(x => x.Registration.Contains(regNumber)).ToList();
                 var carQ = _db.cars.Where(x => x.Registration.Contains(regNumber)).ToList();
-                if (mcQ == null)
+                /*if (mcQ == null)
                 {
                     return carQ;
                 }
                 else if (carQ == null)
                 {
                     return mcQ;
-                }
+                }*/
                 vehicleList.AddRange(mcQ);
                 vehicleList.AddRange(carQ);
             
