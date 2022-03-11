@@ -3,7 +3,7 @@ using DatabaseAccessLibrary;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace FabolousUI.Pages.Park
+namespace FabolousUI.Pages.EditTypes
 {
     [BindProperties]
     public class EditVehicleModel : PageModel
@@ -27,13 +27,13 @@ namespace FabolousUI.Pages.Park
             if (ModelState.IsValid)
             {
 
-            _context.cars.Update(myCar);
-            await _context.SaveChangesAsync();
-            TempData["Success"] = "Vehicle edited successfully";
-            return RedirectToPage("../Park/Index");
+                _context.cars.Update(myCar);
+                await _context.SaveChangesAsync();
+                TempData["Success"] = "Car edited successfully";
+                return RedirectToPage("../Park/Index");
             }
             return Page();
         }
-  
+
     }
 }

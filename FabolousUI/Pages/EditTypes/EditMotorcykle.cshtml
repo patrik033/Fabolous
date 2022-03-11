@@ -4,8 +4,11 @@
 
 <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <input type="hidden" asp-for="@Model.myCar.Id" />
-    <input type="hidden" asp-for="@Model.myCar.Parkingspot" value="@Model.myCar.Id" />
+    <input type="hidden" asp-for="@Model.myMc.Id" />
+    <input type="hidden" asp-for="@Model.myMc.Parkingspot" value="@Model.myMc.Parkingspot"/>
+   
+    
+    
     <div class="border p-3 mt-4 col-8 container-fluid">
         <div class="row pb-2">
             <h2 class="text-primary pl-3">Edit Category</h2>
@@ -17,9 +20,9 @@
 
         <div asp-validation-summary="ModelOnly"></div>
         <div class="form-group">
-            <label asp-for="myCar.Registration"></label>
-            <input asp-for="myCar.Registration" class="form-control" />
-            <span asp-validation-for=myCar.Registration class="text-danger"></span>
+            <label asp-for="myMc.Registration"></label>
+            <input asp-for="myMc.Registration" class="form-control" />
+            <span asp-validation-for=myMc.Registration class="text-danger"></span>
         </div>
 
       
