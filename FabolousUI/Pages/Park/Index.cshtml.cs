@@ -9,7 +9,10 @@ namespace FabolousUI.Pages.Park
     [BindProperties]
     public class IndexModel : PageModel
     {
+       
+
         private readonly FabolousDbContext _context;
+
         public IList<Parkingspot> Cars { get; set; }
         private Car[] cars { get; set; }
 
@@ -21,18 +24,33 @@ namespace FabolousUI.Pages.Park
         [BindProperty(SupportsGet = true)]
         public int S { get; set; } = 50;
         public int TotalRecords { get; set; } = 0;
-        
+        public List<object> FoundVehicles { get; set; } = new List<object>();
         public int StoredVehicles { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string Search { get; set; }
 
         public Parking_Garage Garage;
         public Garage_Functions GarageFunctions;
         public JsonEditor jsonEditor = new JsonEditor();
-
+        public Vehicle_Management vm = new Vehicle_Management();
         public IndexModel(FabolousDbContext context)
         {
             _context = context;
             GarageFunctions = new Garage_Functions(_context);
         }
+
+        public IActionResult Test()
+        {
+            if (Search != null)
+            {
+                FoundVehicles = vm.SearchButtonListGenerator(Search).ToList();
+                return Page();
+            }
+            else
+                return Page();
+        }
+
+
         public IActionResult OnGet()
         {
            
@@ -57,6 +75,10 @@ namespace FabolousUI.Pages.Park
 
             return Page();
         }
-       
+        public IActionResult OnPost()
+        {
+            return Page();
+        }
+
     }
 }

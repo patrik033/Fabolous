@@ -3,12 +3,18 @@
 
 
 <h1>Park page</h1>
+<form method="post">
 <label>Reg Search</label>
-<input class="form-text"  />
 @{
     Dictionary<string, string> result = new Dictionary<string, string>();
+    
+   
 }
-<a class="btn btn-secondary" asp-page="Search_Result"   >Search</a>
+
+    <input class="form-text" name="search" value="" id="search" />
+
+<button type="submit" class="btn btn-secondary" asp-all-route-data="result" asp-page="Search_Result">Search</button>
+</form>
 
 <hr />
 <br />

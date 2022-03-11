@@ -16,6 +16,10 @@ namespace DatabaseAccessLibrary
         {
             _db = db;
         }
+        public Vehicle_Management()
+        {
+
+        }
         /// <summary>
         /// Skall ta bort ett fordon baserat på reg nummer. Söksträngen måste vara komplett, annars tas inget bort.
         /// </summary>

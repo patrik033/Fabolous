@@ -16,7 +16,8 @@ namespace FabolousUI.Pages.Park
         private readonly FabolousDbContext _context;
         
         
-        
+
+        public string Search { get; set; }
 
         public IEnumerable<Parkingspot> myNum;
         public Parking_Garage Garage;
@@ -48,5 +49,6 @@ namespace FabolousUI.Pages.Park
            
                
         }
+        
     }
 }
