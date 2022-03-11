@@ -4,7 +4,8 @@ using BussinessLogicLibrary.Stuff;
 using DatabaseAccessLibrary;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Text.Json.Serialization;
+
+using Newtonsoft.Json;
 
 namespace FabolousUI.Pages.Park
 {
@@ -32,12 +33,20 @@ namespace FabolousUI.Pages.Park
         }
         
         
-        public void OnGet(Dictionary<string, string> foundVehicles)
+        public IActionResult OnGet(Dictionary<string, string> foundVehicles)
         {
-            foreach(var vehicle in foundVehicles)
+            if (foundVehicles != null && foundVehicles.Count != 0)
             {
-                FoundVehicles.Add(vehicle);
+                foreach (var vehicle in foundVehicles)
+                {
+                    FoundVehicles.Add(JsonConvert.DeserializeObject(vehicle.Value));
+                }
+                return Page();
             }
+            else
+                return RedirectToPage("Index");
+           
+               
         }
     }
 }
