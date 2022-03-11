@@ -82,10 +82,18 @@ namespace DatabaseAccessLibrary
             return indexes;   
         }
         
-        object FindVehicleToRelocate(string regNumber)
+        /// <summary>
+        /// Metod för att generera en lista baserat på inparameter från
+        /// Sök lådan 
+        /// </summary>
+        /// <param name="regNumber"></param>
+        /// <returns></returns>
+        public IEnumerable<object> SearchButtonListGenerator(string regNumber)
         {
-                var mcQ = _db.motorcycles.Find(regNumber);
-                var carQ = _db.cars.Find(regNumber);
+               
+                var vehicleList = new List<object>();   
+                var mcQ =  _db.motorcycles.Where(x => x.Registration.Contains(regNumber)).ToList();
+                var carQ = _db.cars.Where(x => x.Registration.Contains(regNumber)).ToList();
                 if (mcQ == null)
                 {
                     return carQ;
@@ -94,8 +102,14 @@ namespace DatabaseAccessLibrary
                 {
                     return mcQ;
                 }
-                return "Not found"; 
+                return vehicleList; 
         }
+        /// <summary>
+        /// Metod för att uppdatera fältet Parkingspot på det fordon som har
+        /// flyttats
+        /// </summary>
+        /// <param name="currentObjectRegistration"></param>
+        /// <param name="newSpot"></param>
         void UpdateMovedVehicle(string currentObjectRegistration, int newSpot)
         {
             var findMc = _db.motorcycles.Find(currentObjectRegistration);
