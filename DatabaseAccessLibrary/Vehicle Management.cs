@@ -102,7 +102,8 @@ namespace DatabaseAccessLibrary
                 {
                     return mcQ;
                 }
-                return vehicleList; 
+            
+                return vehicleList.Concat(carQ).Concat(mcQ); 
         }
         /// <summary>
         /// Metod för att uppdatera fältet Parkingspot på det fordon som har
