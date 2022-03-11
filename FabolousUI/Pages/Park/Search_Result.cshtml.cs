@@ -1,0 +1,43 @@
+using BussinessLogicLibrary;
+using BussinessLogicLibrary.Models;
+using BussinessLogicLibrary.Stuff;
+using DatabaseAccessLibrary;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Text.Json.Serialization;
+
+namespace FabolousUI.Pages.Park
+{
+    [BindProperties]
+    public class Search_Result : PageModel
+    {
+        
+        private readonly FabolousDbContext _context;
+        
+        
+        
+
+        public IEnumerable<Parkingspot> myNum;
+        public Parking_Garage Garage;
+
+        public Garage_Functions GarageFunctions;
+
+        public List<object> FoundVehicles { get; set; }
+
+        public Search_Result(FabolousDbContext context)
+        {
+            _context = context;
+           
+          
+        }
+        
+        
+        public void OnGet(Dictionary<string, string> foundVehicles)
+        {
+            foreach(var vehicle in foundVehicles)
+            {
+                FoundVehicles.Add(vehicle);
+            }
+        }
+    }
+}

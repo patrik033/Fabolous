@@ -25,10 +25,10 @@ namespace FabolousUI.Pages.Park
         [BindProperty(SupportsGet = true)]
         public int S { get; set; } = 50;
         public int TotalRecords { get; set; } = 0;
-        
+
         public int StoredVehicles { get; set; }
-        
-        
+
+
         public Parking_Garage Garage;
         public Garage_Functions GarageFunctions;
         public JsonEditor jsonEditor = new JsonEditor();
@@ -41,22 +41,29 @@ namespace FabolousUI.Pages.Park
         public IActionResult OnGet(Dictionary<string, string> passedObject)
         {
 
-            
-                    if (passedObject.Where(x => x.Key == "Motorcycle").FirstOrDefault().Key.Any())
-                    {
-                        MyVehicle = JsonConvert.DeserializeObject<Motorcycle>(passedObject.Where(x => x.Key == "Motorcycle").FirstOrDefault().Value);
-                    }
-                    else if (passedObject.Where(x => x.Key == "Motorcycle").FirstOrDefault().Key.Any())
-                    {
-                        MyVehicle = JsonConvert.DeserializeObject<Car>(passedObject.Where(x => x.Key == "Car").FirstOrDefault().Value);
-                    }
-                
-           
-                                           
-            
-            Garage = GarageFunctions.InstanciateGarage(int.Parse(jsonEditor.ReadProperty("Parkinggarage","Size")));
+            if (passedObject.ContainsKey("Motorcycle"))
+            {
+                if (passedObject.Where(x => x.Key == "Motorcycle").FirstOrDefault().Key.Any() != null)
+                {
+                    MyVehicle = JsonConvert.DeserializeObject<Motorcycle>(passedObject.Where(x => x.Key == "Motorcycle").FirstOrDefault().Value);
+                }
+            }
+            else if (passedObject.ContainsKey("Car"))
+            {
+                if (passedObject.Where(x => x.Key == "Car").FirstOrDefault().Key.Any() != null)
+                {
+                    MyVehicle = JsonConvert.DeserializeObject<Car>(passedObject.Where(x => x.Key == "Car").FirstOrDefault().Value);
+                }
+            }
+            else
+                return RedirectToPage("../WrongParkingSpotCount");
+
+
+
+
+            Garage = GarageFunctions.InstanciateGarage(int.Parse(jsonEditor.ReadProperty("Parkinggarage", "Size")));
             Garage = GarageFunctions.GetParkedVehicles(Garage);
-            
+
             TotalRecords = Garage.spots.Count();
 
             if (TotalRecords < GarageFunctions.GetHighestParkingSpot(Garage))
@@ -65,11 +72,11 @@ namespace FabolousUI.Pages.Park
 
             }
 
-            Garage.spots = Garage.spots.Skip((P-1) * S).Take(S).ToList();
+            Garage.spots = Garage.spots.Skip((P - 1) * S).Take(S).ToList();
 
-            
+
             return Page();
         }
-       
+
     }
 }

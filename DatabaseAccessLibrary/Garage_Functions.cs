@@ -56,39 +56,39 @@ namespace DatabaseAccessLibrary
         public Parking_Garage GetParkedVehicles(Parking_Garage parkingGarage)
         {
 
-            foreach (var item in parkingGarage.spots)
+            foreach (var spot in parkingGarage.spots)
             {
-                if (item.Size > item.CurrentSize)
+                if (spot.Size > spot.CurrentSize)
                 {
-                    var number = item.Id;
+                    var number = spot.Id;
                     if (_db.cars.Where(car => car.Parkingspot == number).Any())
                     {
                         var selectedItem = _db.cars.Where(car => car.Parkingspot == number).FirstOrDefault();
-                        if (selectedItem != null && selectedItem.Size <= item.Size - item.CurrentSize)
+                        if (selectedItem != null && selectedItem.Size <= spot.Size - spot.CurrentSize)
                         {
-                            item.Parked_Vehicles.Add(selectedItem);
-                            item.CurrentSize += 4;
+                            spot.Parked_Vehicles.Add(selectedItem);
+                            spot.CurrentSize += 4;
                         }
                     }
                 }
             }
 
-            foreach (var item in parkingGarage.spots)
+            foreach (var spot in parkingGarage.spots)
             {
 
-                if (item.Size > item.CurrentSize)
+                if (spot.Size > spot.CurrentSize)
                 {
-                    var number = item.Id;
+                    var number = spot.Id;
 
                     if (_db.motorcycles.Where(x => x.Parkingspot == number).Any())
                     {
                         var selectedItem = _db.motorcycles.Where(car => car.Parkingspot == number).Take(2).ToList();
-                        foreach (var lists in selectedItem)
+                        foreach (var vehicle in selectedItem)
                         {
-                            if (lists != null /*&&*/ /*item.Size <= lists.Size *//*- item.CurrentSize*/)
+                            if (vehicle != null && spot.Size >= vehicle.Size + spot.CurrentSize)
                             {
-                                item.Parked_Vehicles.Add(lists);
-                                item.CurrentSize += 2;
+                                spot.Parked_Vehicles.Add(vehicle);
+                                spot.CurrentSize += 2;
                             }
                         }
                     }
