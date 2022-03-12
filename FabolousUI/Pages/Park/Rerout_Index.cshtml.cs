@@ -61,7 +61,7 @@ namespace FabolousUI.Pages.Park
 
 
 
-            Garage = GarageFunctions.InstanciateGarage(int.Parse(jsonEditor.ReadProperty("Parkinggarage", "Size")));
+            Garage = GarageFunctions.InstanciateGarage();
             Garage = GarageFunctions.GetParkedVehicles(Garage);
 
             TotalRecords = Garage.spots.Count();

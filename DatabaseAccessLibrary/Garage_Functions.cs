@@ -1,5 +1,6 @@
 ﻿using BussinessLogicLibrary;
 using BussinessLogicLibrary.Models;
+using BussinessLogicLibrary.Stuff;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,11 @@ namespace DatabaseAccessLibrary
 
 
         private readonly FabolousDbContext _db;
+        public JsonEditor Editor { get; set; } = new JsonEditor();
         public Garage_Functions(FabolousDbContext db)
         {
             _db = db;
+            
         }
         public Garage_Functions()
         {
@@ -27,11 +30,13 @@ namespace DatabaseAccessLibrary
         /// </summary>
         /// <param name="garageSize"></param>
         /// <returns></returns>
-        public Parking_Garage InstanciateGarage(int size)
+        public Parking_Garage InstanciateGarage()
         {
+            int numbers = int.Parse(Editor.ReadProperty("Parkinggarage", "Size"));
+
             Parking_Garage garage = new Parking_Garage();
 
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < numbers; i++) 
             {
                 garage.spots.Add(new Parkingspot());
             }
@@ -95,7 +100,6 @@ namespace DatabaseAccessLibrary
                 }
             }
             return parkingGarage;
-
         }
 
         public int GetHighestParkingSpot()
