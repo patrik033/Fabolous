@@ -8,17 +8,11 @@ namespace BussinessLogicLibrary
 {
     public class CostCalculation
     {
-
-
         public TimeSpan ParkedTime(DateTime startTime)
         {
             TimeSpan totalHours = (DateTime.Now - startTime);
-
-
             return totalHours;
         }
-
-
 
         public string ParkedTimeToScreen(DateTime startTime)
         {
@@ -55,12 +49,9 @@ namespace BussinessLogicLibrary
             total = Math.Round(total - (costPerHour / 6));
 
             if (total > 0)
-
                 return total;
-
             else
                 return 0;
-
         }
     }
 }

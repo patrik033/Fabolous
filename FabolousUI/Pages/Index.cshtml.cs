@@ -14,7 +14,6 @@ namespace FabolousUI.Pages
 
         public void OnGet()
         {
-
         }
     }
 }

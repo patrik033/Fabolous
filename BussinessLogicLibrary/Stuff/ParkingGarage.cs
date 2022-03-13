@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace BussinessLogicLibrary
 {
-    interface IVehicle
+    public class ParkingGarage
     {
-        public string Registration { get; set; }
-        public DateTime StartTime { get; set; } 
-        public int Size { get; set; }
+        public List<Parkingspot> spots { get; set; } = new List<Parkingspot>();
+        public int Id { get; set; }
     }
 }

@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 namespace FabolousUI.Pages.Park
 {
     [BindProperties]
-    public class Search_Result : PageModel
+    public class SearchResult : PageModel
     {
         
         private readonly FabolousDbContext _context;
@@ -19,13 +19,13 @@ namespace FabolousUI.Pages.Park
         
 
         public IEnumerable<Parkingspot> myNum;
-        public Parking_Garage Garage;
+        public ParkingGarage Garage;
 
-        public Garage_Functions GarageFunctions;
+        public GarageFunctions GarageFunctions;
 
         public List<object> FoundVehicles { get; set; }
 
-        public Search_Result(FabolousDbContext context)
+        public SearchResult(FabolousDbContext context)
         {
             _context = context;
            

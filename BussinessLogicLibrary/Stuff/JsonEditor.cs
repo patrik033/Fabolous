@@ -29,16 +29,21 @@ namespace BussinessLogicLibrary.Stuff
                 {
                     return jsonObject[char.ToUpper(property[0]) + property.Substring(1)][char.ToUpper(field[0]) + field.Substring(1)];
                 }
-                else return String.Empty;
+                else
+                {
+                    return String.Empty;
+                }
             }
             else if (property.ToLower() == "parkingspot" || property.ToLower() == "parkinggarage")
             {
                 if (field.ToLower() == "size")
                 {
                     return jsonObject[char.ToUpper(property[0]) + property.Substring(1)][char.ToUpper(field[0]) + field.Substring(1)];
-
                 }
-                else return String.Empty;
+                else
+                {
+                    return String.Empty;
+                }
             }
             return String.Empty;
         }
@@ -93,14 +98,12 @@ namespace BussinessLogicLibrary.Stuff
         public string JsonSerializer (object vehicle)
         {
             string output = JsonSerializer(vehicle);
-            return output;                       
+            return output;                  
         }
         public object JsonDeserializer(string vehicle)
         {
             object output = JsonDeserializer(vehicle);
             return output;
         }
-
-
     }
 }

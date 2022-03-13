@@ -9,20 +9,16 @@ using System.Threading.Tasks;
 
 namespace DatabaseAccessLibrary
 {
-    public class Garage_Functions
+    public class GarageFunctions
     {
-
-
-        private readonly FabolousDbContext _db;
+        private readonly FabolousDbContext _context;
         public JsonEditor Editor { get; set; } = new JsonEditor();
-        public Garage_Functions(FabolousDbContext db)
+        public GarageFunctions(FabolousDbContext context)
         {
-            _db = db;
-            
+            _context = context;    
         }
-        public Garage_Functions()
+        public GarageFunctions()
         {
-
         }
 
         /// <summary>
@@ -30,13 +26,13 @@ namespace DatabaseAccessLibrary
         /// </summary>
         /// <param name="garageSize"></param>
         /// <returns></returns>
-        public Parking_Garage InstanciateGarage()
+        public ParkingGarage InstanciateGarage()
         {
             int numbers = int.Parse(Editor.ReadProperty("Parkinggarage", "Size"));
 
-            Parking_Garage garage = new Parking_Garage();
+            ParkingGarage garage = new ParkingGarage();
 
-            for (int i = 0; i < numbers; i++) 
+            for (int i = 0; i < numbers; i++)
             {
                 garage.spots.Add(new Parkingspot());
             }
@@ -55,10 +51,10 @@ namespace DatabaseAccessLibrary
         /// </summary>
         /// <param name="garage"></param>
         /// <returns></returns>
-        /// 
+        ///
 
 
-        public Parking_Garage GetParkedVehicles(Parking_Garage parkingGarage)
+        public ParkingGarage GetParkedVehicles(ParkingGarage parkingGarage)
         {
 
             foreach (var spot in parkingGarage.spots)
@@ -66,9 +62,9 @@ namespace DatabaseAccessLibrary
                 if (spot.Size > spot.CurrentSize)
                 {
                     var number = spot.Id;
-                    if (_db.cars.Where(car => car.Parkingspot == number).Any())
+                    if (_context.cars.Where(car => car.Parkingspot == number).Any())
                     {
-                        var selectedItem = _db.cars.Where(car => car.Parkingspot == number).FirstOrDefault();
+                        var selectedItem = _context.cars.Where(car => car.Parkingspot == number).FirstOrDefault();
                         if (selectedItem != null && selectedItem.Size <= spot.Size - spot.CurrentSize)
                         {
                             spot.Parked_Vehicles.Add(selectedItem);
@@ -80,14 +76,13 @@ namespace DatabaseAccessLibrary
 
             foreach (var spot in parkingGarage.spots)
             {
-
                 if (spot.Size > spot.CurrentSize)
                 {
                     var number = spot.Id;
 
-                    if (_db.motorcycles.Where(x => x.Parkingspot == number).Any())
+                    if (_context.motorcycles.Where(x => x.Parkingspot == number).Any())
                     {
-                        var selectedItem = _db.motorcycles.Where(car => car.Parkingspot == number).Take(2).ToList();
+                        var selectedItem = _context.motorcycles.Where(car => car.Parkingspot == number).Take(2).ToList();
                         foreach (var vehicle in selectedItem)
                         {
                             if (vehicle != null /*&& spot.Size >= vehicle.Size + spot.CurrentSize*/)
@@ -105,27 +100,21 @@ namespace DatabaseAccessLibrary
         public int GetHighestParkingSpot()
         {
             int Max = 0;
-
-            foreach (var car in _db.cars)
+            foreach (var car in _context.cars)
             {
-                if (_db.cars != null)
+                if (_context.cars != null && car.Parkingspot > Max)
                 {
-
-                    if (car.Parkingspot > Max)
-                        Max = car.Parkingspot;
+                    Max = car.Parkingspot;
                 }
             }
-            foreach (var mc in _db.motorcycles)
+            foreach (var mc in _context.motorcycles)
             {
-                if (_db.motorcycles != null)
+                if (_context.motorcycles != null && mc.Parkingspot > Max)
                 {
-
-                    if (mc.Parkingspot > Max)
-                        Max = mc.Parkingspot;
+                    Max = mc.Parkingspot;
                 }
             }
             return Max;
         }
-
     }
 }
