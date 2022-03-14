@@ -2,6 +2,7 @@
   "Car": {
     "Size": 4,
     "Cost": 2
+    "Cost": 20
   },
   "Motorcycle": {
     "Size": 2,
