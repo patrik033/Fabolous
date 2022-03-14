@@ -30,17 +30,19 @@ namespace FabolousUI.Pages.Park
         public ParkingGarage Garage;
         public GarageFunctions GarageFunctions;
         public JsonEditor jsonEditor = new JsonEditor();
-        public Vehicle_Management vm;
+
+        public VehicleManagement vm;
         public IndexModel(FabolousDbContext context)
         {
             _context = context;
             GarageFunctions = new GarageFunctions(_context);
+            vm = new VehicleManagement(_context);
         }
        
         
 
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
             Garage = GarageFunctions.InstanciateGarage();
             Garage = GarageFunctions.GetParkedVehicles(Garage);           
@@ -60,8 +62,8 @@ namespace FabolousUI.Pages.Park
             Cars = Garage.spots
                 .Skip((P - 1) * S)
                 .Take(S)
-                .ToList();            
-
+                .ToList();
+            return Page();
             
         }
     }

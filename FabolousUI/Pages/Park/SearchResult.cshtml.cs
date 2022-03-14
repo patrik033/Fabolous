@@ -20,9 +20,9 @@ namespace FabolousUI.Pages.Park
         public string Search { get; set; }
 
         
-        public Parking_Garage Garage;
+        public ParkingGarage Garage;
         public JsonEditor jsonEditor = new JsonEditor();
-        public Garage_Functions GarageFunctions;
+        public GarageFunctions GarageFunctions;
         
         public List<Vehicle> Vehicles = new List<Vehicle>();
         
@@ -46,20 +46,20 @@ namespace FabolousUI.Pages.Park
 
         }
 
-        public GarageFunctions GarageFunctions;
+       
 
 
         public SearchResult(FabolousDbContext context)
         {
             _context = context;
-            GarageFunctions = new Garage_Functions(_context);
+            GarageFunctions = new GarageFunctions(_context);
 
         }
         
         
         public void OnGet()
         {
-            Garage = GarageFunctions.InstanciateGarage(int.Parse(jsonEditor.ReadProperty("Parkinggarage", "Size")));
+            Garage = GarageFunctions.InstanciateGarage();
             Garage = GarageFunctions.GetParkedVehicles(Garage);
             
             Vehicles = SearchForVehicles();
