@@ -27,6 +27,8 @@ namespace FabolousUI.Pages.Park
         public int TotalRecords { get; set; } = 0;
 
         public int StoredVehicles { get; set; }
+        
+        
 
 
         public Parking_Garage Garage;
@@ -74,9 +76,15 @@ namespace FabolousUI.Pages.Park
 
             Garage.spots = Garage.spots.Skip((P - 1) * S).Take(S).ToList();
 
+            
+
 
             return Page();
         }
+        
+        
+
+
 
     }
 }

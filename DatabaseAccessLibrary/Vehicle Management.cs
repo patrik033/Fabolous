@@ -113,7 +113,7 @@ namespace DatabaseAccessLibrary
         /// </summary>
         /// <param name="currentObjectRegistration"></param>
         /// <param name="newSpot"></param>
-        void UpdateMovedVehicle(string currentObjectRegistration, int newSpot)
+        public void UpdateMovedVehicle(string currentObjectRegistration, int newSpot)
         {
             var findMc = _db.motorcycles.Find(currentObjectRegistration);
             var findCar = _db.cars.Find(currentObjectRegistration); 
