@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace DatabaseAccessLibrary
 {
-    public class Vehicle_Management
+    public class VehicleManagement
     {
         private readonly FabolousDbContext _db;
 
-        public Vehicle_Management(FabolousDbContext db)
+        public VehicleManagement(FabolousDbContext db)
         {
             _db = db;
         }
@@ -47,7 +47,7 @@ namespace DatabaseAccessLibrary
         {
             List<dynamic> vehicleList = new List<dynamic>();
             if (vehicleType.ToLower() == "car")
-            {               
+            {
                 vehicleList = (List<dynamic>)_db.cars.Cast<dynamic>();
                 return vehicleList;
             }
@@ -71,15 +71,13 @@ namespace DatabaseAccessLibrary
             int count = 0;
             foreach(var item in parkingSpotList)
             {
-                
-
                 if (regex.IsMatch(item.GetType().GetProperty("Registration").GetValue(item).ToString()))
                 {
                     indexes.Add(count);
                 }
                 count++;
             }
-            return indexes;   
+            return indexes;
         }
         
         /// <summary>
@@ -89,8 +87,7 @@ namespace DatabaseAccessLibrary
         /// <param name="regNumber"></param>
         /// <returns></returns>
         public IEnumerable<object> SearchButtonListGenerator(string regNumber)
-        {
-               
+        {         
                 var vehicleList = new List<object>();   
                 var mcQ =  _db.motorcycles.Where(x => x.Registration.Contains(regNumber)).ToList();
                 var carQ = _db.cars.Where(x => x.Registration.Contains(regNumber)).ToList();
@@ -104,8 +101,7 @@ namespace DatabaseAccessLibrary
                 }*/
                 vehicleList.AddRange(mcQ);
                 vehicleList.AddRange(carQ);
-            
-                return vehicleList; 
+                return vehicleList;
         }
         /// <summary>
         /// Metod för att uppdatera fältet Parkingspot på det fordon som har
@@ -116,14 +112,13 @@ namespace DatabaseAccessLibrary
         public void UpdateMovedVehicle(string currentObjectRegistration, int newSpot)
         {
             var findMc = _db.motorcycles.Find(currentObjectRegistration);
-            var findCar = _db.cars.Find(currentObjectRegistration); 
+            var findCar = _db.cars.Find(currentObjectRegistration);
             if (findMc == null)
             {
                 //uppdatera bil
                 findCar = new Car { Parkingspot = newSpot };
                 _db.cars.Attach(findCar).Property(x => x.Parkingspot).IsModified = true;
                 _db.SaveChanges();
-                
             }
             else if (findCar == null)
             {
@@ -132,9 +127,6 @@ namespace DatabaseAccessLibrary
                 _db.motorcycles.Attach(findMc).Property(x => x.Parkingspot).IsModified = true;
                 _db.SaveChanges();
             }
-            
-
         }
-        
     }
 }

@@ -9,7 +9,6 @@ namespace BussinessLogicLibrary
 {
     public class Parkingspot
     {
-        
         public int Size { get; set; } = 4;  // 0 = Full 2 = Delvis full 4 = Tom
         public int Id { get; set; }
         public int CurrentSize { get; set; } = 0;

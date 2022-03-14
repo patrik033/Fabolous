@@ -18,15 +18,15 @@ namespace FabolousUI.Pages.Park
         public string MyObject { get; set; }
 
         public IEnumerable<Parkingspot> myNum;
-        public Parking_Garage Garage;
+        public ParkingGarage Garage;
 
-        public Garage_Functions GarageFunctions;
+        public GarageFunctions GarageFunctions;
 
       
         public EditModel(FabolousDbContext context)
         {
             _context = context;
-            GarageFunctions = new Garage_Functions(_context);
+            GarageFunctions = new GarageFunctions(_context);
             myNum = new List<Parkingspot>();
         }
         //public void SerializeObject()
@@ -36,7 +36,7 @@ namespace FabolousUI.Pages.Park
         
         public void OnGet(int id)
         {
-            Garage = GarageFunctions.InstanciateGarage(100);
+            Garage = GarageFunctions.InstanciateGarage();
             Garage = GarageFunctions.GetParkedVehicles(Garage);
             myNum = Garage.spots.Where(x => x.Id == id);
         }

@@ -26,7 +26,6 @@ namespace FabolousUI.Pages.EditTypes
         {
             if (ModelState.IsValid)
             {
-
                 _context.cars.Update(myCar);
                 await _context.SaveChangesAsync();
                 TempData["Success"] = "Car edited successfully";
@@ -34,6 +33,5 @@ namespace FabolousUI.Pages.EditTypes
             }
             return Page();
         }
-
     }
 }
