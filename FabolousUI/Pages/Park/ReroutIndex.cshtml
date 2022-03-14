@@ -1,4 +1,5 @@
 ﻿@page
+@using Newtonsoft.Json
 @model FabolousUI.Pages.Park.ReroutIndexModel
 
 
@@ -46,7 +47,7 @@
             <div class="col-lg-2 col-md-4 col-sm-6 pb-3">
         <div class="gridBox" data-id="">
             <div class="logo">
-                    <a asp-page="/Move/Index" asp-all-route-data ="newSpotDict" asp-route-id ="@value.Id" class="btn btn-success" >@value.Id</a> 
+                    <a asp-page="../Move/Index" asp-all-route-data ="newSpotDict" asp-route-id ="@value.Id" class="btn btn-success" >@value.Id</a> 
                     
             </div>
         </div>
