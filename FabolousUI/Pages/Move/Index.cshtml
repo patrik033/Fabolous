@@ -1,0 +1,32 @@
+﻿@page
+@using System.ComponentModel
+@model FabolousUI.Pages.Move.UpdateVehicleModel
+
+@{
+    var vehicle = @Model.UpdatedCar;
+    var newSpot = @Model.MyNewParkingSpot;
+}
+
+<div class="col-md-12 text-center">
+<h2>Vehicle Information</h2>
+
+<div>
+    
+    <hr />
+    
+        @{
+            
+            string movedto = "The vehicle has moved to";
+            <p class="text-center">@vehicle.Registration<br />@vehicle.StartTime<br />@movedto<br /><ins>@newSpot</ins></p>
+            
+        }              
+    <a  asp-page="../Park/Index" class="btn btn-outline-success btn-sm" ><i class="fas fa-user"></i>Succesfully moved! Click me to get back!</a>   
+</div>    
+</div>        
+           
+  
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+}

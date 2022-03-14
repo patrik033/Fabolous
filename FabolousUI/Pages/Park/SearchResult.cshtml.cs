@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 namespace FabolousUI.Pages.Park
 {
     [BindProperties]
-    public class Search_Result : PageModel
+    public class SearchResult : PageModel
     {
         
         private readonly FabolousDbContext _context;
@@ -46,10 +46,10 @@ namespace FabolousUI.Pages.Park
 
         }
 
+        public GarageFunctions GarageFunctions;
 
 
-
-        public Search_Result(FabolousDbContext context)
+        public SearchResult(FabolousDbContext context)
         {
             _context = context;
             GarageFunctions = new Garage_Functions(_context);

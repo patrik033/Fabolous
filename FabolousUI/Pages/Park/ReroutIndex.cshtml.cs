@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace FabolousUI.Pages.Park
 {
     [BindProperties]
-    public class Rerout_IndexModel : PageModel
+    public class ReroutIndexModel : PageModel
     {
         private readonly FabolousDbContext _context;
         public IList<Parkingspot> Cars { get; set; }
@@ -29,14 +29,14 @@ namespace FabolousUI.Pages.Park
         public int StoredVehicles { get; set; }
 
 
-        public Parking_Garage Garage;
-        public Garage_Functions GarageFunctions;
+        public ParkingGarage Garage;
+        public GarageFunctions GarageFunctions;
         public JsonEditor jsonEditor = new JsonEditor();
 
-        public Rerout_IndexModel(FabolousDbContext context)
+        public ReroutIndexModel(FabolousDbContext context)
         {
             _context = context;
-            GarageFunctions = new Garage_Functions(_context);
+            GarageFunctions = new GarageFunctions(_context);
         }
         public IActionResult OnGet(Dictionary<string, string> passedObject)
         {
@@ -58,10 +58,7 @@ namespace FabolousUI.Pages.Park
             else
                 return RedirectToPage("../WrongParkingSpotCount");
 
-
-
-
-            Garage = GarageFunctions.InstanciateGarage(int.Parse(jsonEditor.ReadProperty("Parkinggarage", "Size")));
+            Garage = GarageFunctions.InstanciateGarage();
             Garage = GarageFunctions.GetParkedVehicles(Garage);
 
             TotalRecords = Garage.spots.Count();
@@ -69,14 +66,18 @@ namespace FabolousUI.Pages.Park
             if (TotalRecords < GarageFunctions.GetHighestParkingSpot())
             {
                 return RedirectToPage("../WrongParkingSpotCount");
-
             }
-
             Garage.spots = Garage.spots.Skip((P - 1) * S).Take(S).ToList();
+
+            
 
 
             return Page();
         }
+        
+        
+
+
 
     }
 }

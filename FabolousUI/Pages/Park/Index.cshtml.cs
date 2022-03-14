@@ -25,19 +25,16 @@ namespace FabolousUI.Pages.Park
         [BindProperty(SupportsGet = true)]
         public int S { get; set; } = 50;
         public int TotalRecords { get; set; } = 0;
-      
-      
-                    
-               
-        public Parking_Garage Garage;
-        public Garage_Functions GarageFunctions;
+        public int StoredVehicles { get; set; }
+
+        public ParkingGarage Garage;
+        public GarageFunctions GarageFunctions;
         public JsonEditor jsonEditor = new JsonEditor();
         public Vehicle_Management vm;
         public IndexModel(FabolousDbContext context)
         {
             _context = context;
-            GarageFunctions = new Garage_Functions(_context);
-            vm = new Vehicle_Management(_context);
+            GarageFunctions = new GarageFunctions(_context);
         }
        
         
@@ -45,17 +42,13 @@ namespace FabolousUI.Pages.Park
 
         public void OnGet()
         {
-           
-
-            Garage = GarageFunctions.InstanciateGarage(int.Parse(jsonEditor.ReadProperty("Parkinggarage","Size")));
-            Garage = GarageFunctions.GetParkedVehicles(Garage);
-            
+            Garage = GarageFunctions.InstanciateGarage();
+            Garage = GarageFunctions.GetParkedVehicles(Garage);           
             TotalRecords = Garage.spots.Count();
 
             if (TotalRecords < GarageFunctions.GetHighestParkingSpot())
             {
-                RedirectToPage("../WrongParkingSpotCount");
-
+                return RedirectToPage("../WrongParkingSpotCount");
             }
 
             
@@ -71,7 +64,5 @@ namespace FabolousUI.Pages.Park
 
             
         }
-        
-
     }
 }
