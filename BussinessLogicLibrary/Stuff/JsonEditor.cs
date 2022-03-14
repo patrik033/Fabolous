@@ -62,17 +62,17 @@ namespace BussinessLogicLibrary.Stuff
 
             if (property.ToLower() == "car" || property.ToLower() == "motorcycle")
             {
-                if (field.ToLower() == "size" || field.ToLower() == "cost")
+                if (/*field.ToLower() == "size" || */field.ToLower() == "cost")
                 {
-                    jsonObject[char.ToUpper(property[0]) + property.Substring(1)][char.ToUpper(field[0]) + field.Substring(1)] = value;                   
+                    jsonObject[char.ToUpper(property[0]) + property.Substring(1)][char.ToUpper(field[0]) + field.Substring(1)] = value;
                 }
                 else return;
             }
-            else if (property.ToLower() == "parkingspot" || property.ToLower() == "parkinggarage")
+            else if (/*property.ToLower() == "parkingspot" ||*/ property.ToLower() == "parkinggarage")
             {
                 if (field.ToLower() == "size")
                 {
-                    jsonObject[char.ToUpper(property[0])+property.Substring(1)][char.ToUpper(field[0])+ field.Substring(1)] = value;
+                    jsonObject[char.ToUpper(property[0]) + property.Substring(1)][char.ToUpper(field[0]) + field.Substring(1)] = value;
 
                 }
                 else return;
@@ -95,10 +95,10 @@ namespace BussinessLogicLibrary.Stuff
             return output;
         }
 
-        public string JsonSerializer (object vehicle)
+        public string JsonSerializer(object vehicle)
         {
             string output = JsonSerializer(vehicle);
-            return output;                  
+            return output;
         }
         public object JsonDeserializer(string vehicle)
         {
