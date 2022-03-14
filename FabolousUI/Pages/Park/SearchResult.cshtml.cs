@@ -16,37 +16,61 @@ namespace FabolousUI.Pages.Park
         private readonly FabolousDbContext _context;
         
         
+        [BindProperty(SupportsGet = true)]
+        public string Search { get; set; }
+
+        
+        public ParkingGarage Garage;
+        public JsonEditor jsonEditor = new JsonEditor();
+        public GarageFunctions GarageFunctions;
+        
+        public List<Vehicle> Vehicles = new List<Vehicle>();
         
 
-        public IEnumerable<Parkingspot> myNum;
-        public ParkingGarage Garage;
 
-        public GarageFunctions GarageFunctions;
 
-        public List<object> FoundVehicles { get; set; }
+        public List<Vehicle> SearchForVehicles()
+        {
+           List<Vehicle> vehicles = new List<Vehicle>();
+
+            foreach (var vehicle in _context.cars.Where(x => x.Registration.Contains(Search)))
+            {
+                vehicles.Add((Vehicle)vehicle);
+            }
+            foreach (var vehicle in _context.motorcycles.Where(x => x.Registration.Contains(Search)))
+            {
+                vehicles.Add((Vehicle)vehicle);
+            }
+
+            return vehicles;
+
+        }
+
+       
+
 
         public SearchResult(FabolousDbContext context)
         {
             _context = context;
-           
-          
+            GarageFunctions = new GarageFunctions(_context);
+
         }
         
         
-        public IActionResult OnGet(Dictionary<string, string> foundVehicles)
+        public void OnGet()
         {
-            if (foundVehicles != null && foundVehicles.Count != 0)
-            {
-                foreach (var vehicle in foundVehicles)
-                {
-                    FoundVehicles.Add(JsonConvert.DeserializeObject(vehicle.Value));
-                }
-                return Page();
-            }
-            else
-                return RedirectToPage("Index");
-           
-               
+            Garage = GarageFunctions.InstanciateGarage();
+            Garage = GarageFunctions.GetParkedVehicles(Garage);
+            
+            Vehicles = SearchForVehicles();
+            
+
         }
+
+        public void OnPost(Dictionary<string, string> name)
+        {
+
+        }
+        
     }
 }

@@ -1,5 +1,7 @@
 ﻿@page
+@using Newtonsoft.Json
 @model FabolousUI.Pages.Park.ReroutIndexModel
+
 
 
 <h1>Park page</h1>
@@ -13,7 +15,9 @@
     var numberOfColsNeeded = 5;
     var totalCounter = Model.Garage.spots.Count();
     var itemCounter = 1;
-    int n = @Model.MyVehicle.Size;
+    int vSize = @Model.MyVehicle.Size;
+    var vRegistration = @Model.MyVehicle;
+    
 
 
 
@@ -31,20 +35,24 @@
          if (itemCounter % numberOfColsNeeded == 1)
         {
         @:<div class="row" >
-        <br />
-    }
+            <br />
+        }
 
-   
 
-    if(value.Size-value.CurrentSize >= n) // The vehicle fits
-    {
-    <div class="col-lg-2 col-md-4 col-sm-6 pb-3">
+
+        if( value.Size-value.CurrentSize >= vSize) // The vehicle fits
+        {
+            Dictionary<string, string> newSpotDict = new Dictionary<string, string> { { "currentObject", JsonConvert.SerializeObject(vRegistration) } };
+            
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-3">
         <div class="gridBox" data-id="">
             <div class="logo">
-                    <a asp-page="Index" class="btn btn-success">@value.Id </a> 
+                    <a asp-page="../Move/Index" asp-all-route-data ="newSpotDict" asp-route-id ="@value.Id" class="btn btn-success" >@value.Id</a> 
+                    
             </div>
         </div>
         </div>
+        
     }
     
 

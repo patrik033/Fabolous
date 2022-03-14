@@ -16,6 +16,7 @@ namespace DatabaseAccessLibrary
         {
             _db = db;
         }
+        
         /// <summary>
         /// Skall ta bort ett fordon baserat på reg nummer. Söksträngen måste vara komplett, annars tas inget bort.
         /// </summary>
@@ -93,9 +94,10 @@ namespace DatabaseAccessLibrary
                 var carQ = _db.cars.Where(x => x.Registration.Contains(regNumber)).ToList();
                 /*if (mcQ == null)
                 {
-                    return carQ;
+                    list.Add(item);
                 }
-                else if (carQ == null)
+                if (_db.cars.Where(x => x.Registration.Contains(regNumber)).Any())
+                foreach (var item in _db.motorcycles.Where(x => x.Registration.Contains(regNumber)))
                 {
                     return mcQ;
                 }*/
@@ -109,7 +111,7 @@ namespace DatabaseAccessLibrary
         /// </summary>
         /// <param name="currentObjectRegistration"></param>
         /// <param name="newSpot"></param>
-        void UpdateMovedVehicle(string currentObjectRegistration, int newSpot)
+        public void UpdateMovedVehicle(string currentObjectRegistration, int newSpot)
         {
             var findMc = _db.motorcycles.Find(currentObjectRegistration);
             var findCar = _db.cars.Find(currentObjectRegistration);

@@ -68,7 +68,16 @@ namespace FabolousUI.Pages.Park
                 return RedirectToPage("../WrongParkingSpotCount");
             }
             Garage.spots = Garage.spots.Skip((P - 1) * S).Take(S).ToList();
+
+            
+
+
             return Page();
         }
+        
+        
+
+
+
     }
 }
