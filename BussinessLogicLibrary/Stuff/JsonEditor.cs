@@ -48,7 +48,7 @@ namespace BussinessLogicLibrary.Stuff
             return String.Empty;
         }
         /// <summary>
-        /// Ange cilket fordon du vill ändra, vilket fält och vad det nya värdet ska bli, VAR NOGRANN! Teckenkänsliga fält och värdet måste vara av rätt typ!, ska det vara en int, då ska den skickas in som en int!
+        /// Ange vilket fordon du vill ändra, vilket fält och vad det nya värdet ska bli, VAR NOGRANN! Teckenkänsliga fält och värdet måste vara av rätt typ!, ska det vara en int, då ska den skickas in som en int!
         /// </summary>
         /// <param name="property"></param>
         /// <param name="field"></param>
