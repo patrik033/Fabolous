@@ -9,8 +9,9 @@ namespace FabolousUI.Pages.Park
     public class CreateMotorcykleModel : PageModel
     {
         private readonly FabolousDbContext _context;
-        public int Id { get; set; }
         public Motorcycle myMc { get; set; } = new Motorcycle();
+        public int Id { get; set; }
+
 
         public CreateMotorcykleModel(FabolousDbContext context)
         {
@@ -24,14 +25,25 @@ namespace FabolousUI.Pages.Park
 
         public async Task<IActionResult> OnPost(int id)
         {
-            //TODO add toaster for both create car and create mc
+
 
             if (ModelState.IsValid)
             {
-                await _context.motorcycles.AddAsync(myMc);
-                await _context.SaveChangesAsync();
-                TempData["Success"] = "Motorcykle created successfully";
-                return RedirectToPage("Index");
+                //kollar efter dubletter
+                var fromCar = _context.cars.Where(x => x.Registration == myMc.Registration).FirstOrDefault();
+                var fromMc = _context.motorcycles.Where(x => x.Registration == myMc.Registration).FirstOrDefault();
+                if (fromCar == null && fromMc == null)
+                {
+                    myMc.Registration = myMc.Registration.ToUpper();
+                    await _context.motorcycles.AddAsync(myMc);
+                    await _context.SaveChangesAsync();
+                    TempData["Success"] = "Motorcykle created successfully";
+                    return RedirectToPage("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty,"The registration number already exists, please enter a different one");
+                }
             }
             return Page();
         }

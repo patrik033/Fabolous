@@ -15,7 +15,7 @@ namespace DatabaseAccessLibrary
         public JsonEditor Editor { get; set; } = new JsonEditor();
         public GarageFunctions(FabolousDbContext context)
         {
-            _context = context;    
+            _context = context;
         }
         public GarageFunctions()
         {
@@ -73,7 +73,6 @@ namespace DatabaseAccessLibrary
                     }
                 }
             }
-
             foreach (var spot in parkingGarage.spots)
             {
                 if (spot.Size > spot.CurrentSize)
@@ -85,7 +84,7 @@ namespace DatabaseAccessLibrary
                         var selectedItem = _context.motorcycles.Where(car => car.Parkingspot == number).Take(2).ToList();
                         foreach (var vehicle in selectedItem)
                         {
-                            if (vehicle != null /*&& spot.Size >= vehicle.Size + spot.CurrentSize*/)
+                            if (vehicle != null)
                             {
                                 spot.Parked_Vehicles.Add(vehicle);
                                 spot.CurrentSize += 2;

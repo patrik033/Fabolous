@@ -25,16 +25,27 @@ namespace FabolousUI.Pages.Park
 
         public async Task<IActionResult> OnPost()
         {
-            //TODO add toaster for both create car and create mc
+
 
             if (ModelState.IsValid)
             {
-                await _context.cars.AddAsync(myCar);
-                await _context.SaveChangesAsync();
-                TempData["Success"] = "Car created successfully";
-                return RedirectToPage("Index");
+                //kollar efter dubletter
+                var fromCar = _context.cars.Where(x => x.Registration == myCar.Registration).FirstOrDefault();
+                var fromMc = _context.motorcycles.Where(x => x.Registration == myCar.Registration).FirstOrDefault();
+                if (fromCar == null && fromMc == null)
+                {
+                    myCar.Registration = myCar.Registration.ToUpper();
+                    await _context.cars.AddAsync(myCar);
+                    await _context.SaveChangesAsync();
+                    TempData["Success"] = "Car created successfully";
+                    return RedirectToPage("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "The registration number already exists, please enter a different one");
+                }
             }
-           return Page();
+            return Page();
 
         }
     }

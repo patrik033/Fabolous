@@ -26,10 +26,22 @@ namespace FabolousUI.Pages.EditTypes
         {
             if (ModelState.IsValid)
             {
-                _context.cars.Update(myCar);
-                await _context.SaveChangesAsync();
-                TempData["Success"] = "Car edited successfully";
-                return RedirectToPage("../Park/Index");
+
+                var fromCar = _context.cars.Where(x => x.Registration == myCar.Registration).FirstOrDefault();
+                var fromMc = _context.motorcycles.Where(x => x.Registration == myCar.Registration).FirstOrDefault();
+                if (fromCar == null && fromMc == null)
+                {
+
+                    myCar.Registration = myCar.Registration.ToUpper();
+                    _context.cars.Update(myCar);
+                    await _context.SaveChangesAsync();
+                    TempData["Success"] = "Car edited successfully";
+                    return RedirectToPage("../Park/Index");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "The registration number already exists, please enter another one");
+                }
             }
             return Page();
         }

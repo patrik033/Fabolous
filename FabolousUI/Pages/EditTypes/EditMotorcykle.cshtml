@@ -3,7 +3,7 @@
 
 
 <form method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    
     <input type="hidden" asp-for="@Model.myMc.Id" />
     <input type="hidden" asp-for="@Model.myMc.Parkingspot" value="@Model.myMc.Parkingspot"/>
    
@@ -18,7 +18,7 @@
 
 
 
-        <div asp-validation-summary="ModelOnly"></div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
             <label asp-for="myMc.Registration"></label>
             <input asp-for="myMc.Registration" class="form-control" />

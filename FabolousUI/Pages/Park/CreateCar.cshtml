@@ -15,15 +15,12 @@
             <hr />
         </div>
         <div class="container col-8">
-            
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3">
                 <label asp-for="@Model.myCar.Registration"></label>
                 <input asp-for="@Model.myCar.Registration" type="text" class="form-control" />
                 <span asp-validation-for=@Model.myCar.Registration class="text-danger"></span>
             </div>
-
-           
-
             <button type="submit" class="btn btn-primary" style="width:150px;">Create</button>
         </div>
     </div>

@@ -15,7 +15,7 @@ namespace FabolousUI
 
             // Add services to the container.
             builder.Services.AddRazorPages();
-            //builder.Services.AddSingleton(Garage_Functions,)();
+            //builder.Services.AddSingleton<GarageFunctions>();
             builder.Services.AddDbContext<FabolousDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
