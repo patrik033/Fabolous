@@ -11,11 +11,8 @@ namespace FabolousUI.Pages.Park
     public class ReroutIndexModel : PageModel
     {
         private readonly FabolousDbContext _context;
-        public IList<Parkingspot> Cars { get; set; }
         [BindProperty(SupportsGet = true)]
         public dynamic MyVehicle { get; set; }
-
-
 
         //page number variable
         [BindProperty(SupportsGet = true)]
@@ -25,8 +22,6 @@ namespace FabolousUI.Pages.Park
         [BindProperty(SupportsGet = true)]
         public int S { get; set; } = 50;
         public int TotalRecords { get; set; } = 0;
-
-        public int StoredVehicles { get; set; }
 
 
         public ParkingGarage Garage;
@@ -68,16 +63,7 @@ namespace FabolousUI.Pages.Park
                 return RedirectToPage("../WrongParkingSpotCount");
             }
             Garage.spots = Garage.spots.Skip((P - 1) * S).Take(S).ToList();
-
-            
-
-
             return Page();
         }
-        
-        
-
-
-
     }
 }

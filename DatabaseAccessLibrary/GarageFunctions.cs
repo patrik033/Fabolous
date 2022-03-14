@@ -17,12 +17,9 @@ namespace DatabaseAccessLibrary
         {
             _context = context;
         }
-        public GarageFunctions()
-        {
-        }
 
         /// <summary>
-        /// Ska skicka tillbaka en en tom lista på alla parkeringsplatser som garaget kan använda sig av. Indatan är antal platser som garaget ska ha
+        /// Ska skicka tillbaka en tom lista på alla parkeringsplatser som garaget kan använda sig av. Indatan är antal platser som garaget ska ha
         /// </summary>
         /// <param name="garageSize"></param>
         /// <returns></returns>
@@ -53,10 +50,8 @@ namespace DatabaseAccessLibrary
         /// <returns></returns>
         ///
 
-
         public ParkingGarage GetParkedVehicles(ParkingGarage parkingGarage)
         {
-
             foreach (var spot in parkingGarage.spots)
             {
                 if (spot.Size > spot.CurrentSize)
@@ -67,7 +62,7 @@ namespace DatabaseAccessLibrary
                         var selectedItem = _context.cars.Where(car => car.Parkingspot == number).FirstOrDefault();
                         if (selectedItem != null && selectedItem.Size <= spot.Size - spot.CurrentSize)
                         {
-                            spot.Parked_Vehicles.Add(selectedItem);
+                            spot.ParkedVehicles.Add(selectedItem);
                             spot.CurrentSize += 4;
                         }
                     }
@@ -86,7 +81,7 @@ namespace DatabaseAccessLibrary
                         {
                             if (vehicle != null)
                             {
-                                spot.Parked_Vehicles.Add(vehicle);
+                                spot.ParkedVehicles.Add(vehicle);
                                 spot.CurrentSize += 2;
                             }
                         }

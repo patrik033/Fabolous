@@ -10,7 +10,7 @@ namespace FabolousUI.Pages.Park
     public class CreateModel : PageModel
     {
         private readonly FabolousDbContext _context;
-        public Car myCar { get; set; } = new Car();
+        public Car MyCar { get; set; } = new Car();
         public int Id { get; set; }
 
         public CreateModel(FabolousDbContext context)
@@ -30,12 +30,13 @@ namespace FabolousUI.Pages.Park
             if (ModelState.IsValid)
             {
                 //kollar efter dubletter
-                var fromCar = _context.cars.Where(x => x.Registration == myCar.Registration).FirstOrDefault();
-                var fromMc = _context.motorcycles.Where(x => x.Registration == myCar.Registration).FirstOrDefault();
+                var fromCar = _context.cars.Where(x => x.Registration == MyCar.Registration).FirstOrDefault();
+                var fromMc = _context.motorcycles.Where(x => x.Registration == MyCar.Registration).FirstOrDefault();
+                
                 if (fromCar == null && fromMc == null)
                 {
-                    myCar.Registration = myCar.Registration.ToUpper();
-                    await _context.cars.AddAsync(myCar);
+                    MyCar.Registration = MyCar.Registration.ToUpper();
+                    await _context.cars.AddAsync(MyCar);
                     await _context.SaveChangesAsync();
                     TempData["Success"] = "Car created successfully";
                     return RedirectToPage("Index");
@@ -46,7 +47,6 @@ namespace FabolousUI.Pages.Park
                 }
             }
             return Page();
-
         }
     }
 }

@@ -5,10 +5,10 @@
 
 <form method="post">
     <div class="border p-3 mt-4 col-8">
-        <input asp-for="@Model.myCar.Size" type="hidden" class="form-control"/>
-        <input type="hidden" asp-for="@Model.myCar.Id" />
-        <input type="hidden" asp-for="@Model.myCar.Parkingspot" value="@Model.Id" />
-        <input type="hidden" asp-for="@Model.myCar.StartTime" value="@DateTime.Now" />
+        <input asp-for="@Model.MyCar.Size" type="hidden"/>
+        <input type="hidden" asp-for="@Model.MyCar.Id" />
+        <input type="hidden" asp-for="@Model.MyCar.Parkingspot" value="@Model.Id" />
+        <input type="hidden" asp-for="@Model.MyCar.StartTime" value="@DateTime.Now" />
    
         <div class="row pb-2">
             <h2 class="text-primary pl-3">Create Car</h2>
@@ -17,9 +17,9 @@
         <div class="container col-8">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3">
-                <label asp-for="@Model.myCar.Registration"></label>
-                <input asp-for="@Model.myCar.Registration" type="text" class="form-control" />
-                <span asp-validation-for=@Model.myCar.Registration class="text-danger"></span>
+                <label asp-for="@Model.MyCar.Registration"></label>
+                <input asp-for="@Model.MyCar.Registration" type="text" class="form-control" />
+                <span asp-validation-for=@Model.MyCar.Registration class="text-danger"></span>
             </div>
             <button type="submit" class="btn btn-primary" style="width:150px;">Create</button>
         </div>
@@ -31,5 +31,3 @@
         <partial name="_ValidationScriptsPartial"/>
     }
 }
-
-

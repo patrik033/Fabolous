@@ -10,11 +10,8 @@ namespace FabolousUI.Pages.Move
     public class UpdateVehicleModel : PageModel
     {
         private readonly FabolousDbContext _context;
-        [BindProperty]
         public int MyNewParkingSpot { get; set; }
-        [BindProperty]
         public Car UpdatedCar { get; set; }
-        [BindProperty]
         public Motorcycle UpdatedMc { get; set; }
         public object Holder { get; set; }
         public UpdateVehicleModel(FabolousDbContext context)
@@ -37,7 +34,7 @@ namespace FabolousUI.Pages.Move
             else if (UpdatedCar.Size == 2)
             {
                 UpdatedMc = await _context.motorcycles.FindAsync(UpdatedMc.Id);
-                UpdatedMc.Parkingspot = MyNewParkingSpot;  
+                UpdatedMc.Parkingspot = MyNewParkingSpot;
                 await _context.SaveChangesAsync();
             }
         }

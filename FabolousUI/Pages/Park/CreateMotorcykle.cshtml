@@ -4,20 +4,21 @@
 
 <form method="post">
     <div class="border p-3 mt-4 col-8">
-        <input type="hidden" asp-for="@Model.myMc.Id" />
-        <input asp-for="@Model.myMc.Size" type="hidden" class="form-control"/>
-        <input type="hidden" asp-for="@Model.myMc.Parkingspot" value="@Model.Id" />
-        <input type="hidden" asp-for="@Model.myMc.StartTime" value="@DateTime.Now" />
+        <input type="hidden" asp-for="@Model.MyMc.Id" />
+        <input asp-for="@Model.MyMc.Size" type="hidden"/>
+        <input type="hidden" asp-for="@Model.MyMc.Parkingspot" value="@Model.Id" />
+        <input type="hidden" asp-for="@Model.MyMc.StartTime" value="@DateTime.Now" />
+        
         <div class="row pb-2">
-            <h2 class="text-primary pl-3">Create Motorcykle</h2>
+            <h2 class="text-primary pl-3">Create Motorcycle</h2>
             <hr />
         </div>
         <div class="container col-8">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3">
-                <label asp-for="@Model.myMc.Registration"></label>
-                <input asp-for="@Model.myMc.Registration" class="form-control" />
-                <span asp-validation-for=@Model.myMc.Registration class="text-danger"></span>
+                <label asp-for="@Model.MyMc.Registration"></label>
+                <input asp-for="@Model.MyMc.Registration" class="form-control" />
+                <span asp-validation-for=@Model.MyMc.Registration class="text-danger"></span>
             </div>
            
             <button type="submit" class="btn btn-primary" style="width:150px;">Create</button>

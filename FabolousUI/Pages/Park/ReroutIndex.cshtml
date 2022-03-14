@@ -2,10 +2,7 @@
 @using Newtonsoft.Json
 @model FabolousUI.Pages.Park.ReroutIndexModel
 
-
-
 <h1>Park page</h1>
-
 
 <hr />
 <br />
@@ -19,12 +16,8 @@
     var vRegistration = @Model.MyVehicle;
     
 
-
-
 }
-
     @{var parkingSpotCounter = 1;}
-
 
 
     @{
@@ -37,8 +30,6 @@
         @:<div class="row" >
             <br />
         }
-
-
 
         if( value.Size-value.CurrentSize >= vSize) // The vehicle fits
         {
@@ -66,8 +57,6 @@
         </div>
         </div>
     }
-
-    
 
 
     parkingSpotCounter++;

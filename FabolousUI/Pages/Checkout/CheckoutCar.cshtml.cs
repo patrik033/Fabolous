@@ -9,15 +9,15 @@ namespace FabolousUI.Pages.Checkout
     public class IndexModel : PageModel
     {
         private readonly FabolousDbContext _context;
-        public Car myCar { get; set; } = new Car();
+        public Car MyCar { get; set; } = new Car();
 
-        public string NiceTime { get; set; }
+        public string FormatedTime { get; set; }
         public TimeSpan ParkedTime { get; set; }
         public JsonEditor Editor { get; set; }
         public CostCalculation CostCalculator { get; set; }
         public string Cost { get; set; }
         public decimal TotalCost { get; set; }
-        public string NiceValue { get; set; }
+        public string FormatedCost { get; set; }
         public string TextString { get; set; }
 
         public IndexModel(FabolousDbContext context)
@@ -30,19 +30,19 @@ namespace FabolousUI.Pages.Checkout
 
         public void OnGet(int id)
         {
-            myCar = _context.cars.FirstOrDefault(c => c.Id == id);
+            MyCar = _context.cars.FirstOrDefault(c => c.Id == id);
+
             Cost = Editor.ReadProperty("Car", "Cost");
-            ParkedTime = CostCalculator.ParkedTime(myCar.StartTime);
-            NiceTime = CostCalculator.ParkedTimeToScreen(myCar.StartTime);
-            TotalCost = CostCalculator.CalculateCost(myCar.StartTime, int.Parse(Cost));
-            NiceValue = TotalCost.ToString("C2");
-            TextString = $"\nParkerad tid:   {NiceTime} \n" +
-                $"Total kostnad:   {NiceValue}";
+            ParkedTime = CostCalculator.ParkedTime(MyCar.StartTime);
+            FormatedTime = CostCalculator.ParkedTimeToScreen(MyCar.StartTime);
+            TotalCost = CostCalculator.CalculateCost(MyCar.StartTime, int.Parse(Cost));
+            FormatedCost = TotalCost.ToString("C2");
+            TextString = $"\nParkerad tid:   {FormatedTime} \n" +
+                $"Total kostnad:   {FormatedCost}";
         }
 
         public async Task<IActionResult> OnPostAsync(int id)
         {
-
             var category = await _context.cars.FindAsync(id);
             if (category != null)
             {

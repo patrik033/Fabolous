@@ -9,9 +9,8 @@ namespace FabolousUI.Pages.Park
     public class CreateMotorcykleModel : PageModel
     {
         private readonly FabolousDbContext _context;
-        public Motorcycle myMc { get; set; } = new Motorcycle();
+        public Motorcycle MyMc { get; set; } = new Motorcycle();
         public int Id { get; set; }
-
 
         public CreateMotorcykleModel(FabolousDbContext context)
         {
@@ -22,22 +21,20 @@ namespace FabolousUI.Pages.Park
         {
             Id = id;
         }
-
         public async Task<IActionResult> OnPost(int id)
         {
-
-
             if (ModelState.IsValid)
             {
                 //kollar efter dubletter
-                var fromCar = _context.cars.Where(x => x.Registration == myMc.Registration).FirstOrDefault();
-                var fromMc = _context.motorcycles.Where(x => x.Registration == myMc.Registration).FirstOrDefault();
+                var fromCar = _context.cars.Where(x => x.Registration == MyMc.Registration).FirstOrDefault();
+                var fromMc = _context.motorcycles.Where(x => x.Registration == MyMc.Registration).FirstOrDefault();
+                
                 if (fromCar == null && fromMc == null)
                 {
-                    myMc.Registration = myMc.Registration.ToUpper();
-                    await _context.motorcycles.AddAsync(myMc);
+                    MyMc.Registration = MyMc.Registration.ToUpper();
+                    await _context.motorcycles.AddAsync(MyMc);
                     await _context.SaveChangesAsync();
-                    TempData["Success"] = "Motorcykle created successfully";
+                    TempData["Success"] = "Motorcycle created successfully";
                     return RedirectToPage("Index");
                 }
                 else

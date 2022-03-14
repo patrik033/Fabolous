@@ -24,28 +24,10 @@ namespace BussinessLogicLibrary
             return totalCalculatedTime;
         }
 
-        //public decimal CalculateCost(DateTime startTime, int costPerHour)
-        //{
-        //    TimeSpan totalHours = ParkedTime(startTime);
-
-        //    decimal total = (decimal)Math.Round(totalHours.TotalHours * costPerHour);
-
-        //    total = Math.Round(total - (costPerHour / 6));
-
-        //    if (total > 0)
-
-        //        return total;
-        //    else
-        //        return 0;
-
-        //}
-
         public decimal CalculateCost(DateTime startTime, int costPerHour)
         {
             TimeSpan totalHours = (DateTime.Now - startTime);
-
             decimal total = (decimal)Math.Round(totalHours.TotalHours * costPerHour);
-
             total = Math.Round(total - (costPerHour / 6));
 
             if (total > 0)

@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FabolousUI.Pages.Settings
 {
+
     public class IndexModel : PageModel
     {
        public BussinessLogicLibrary.Stuff.JsonEditor jsonEditor = new BussinessLogicLibrary.Stuff.JsonEditor();
-       public string configText;
+      
+        public string ConfigText;
 
         [BindProperty]
         public string Property { get; set; }
@@ -15,10 +17,9 @@ namespace FabolousUI.Pages.Settings
         [BindProperty]
         public int Value { get; set; }
 
-
         public void OnGet()
         {
-            configText = jsonEditor.ReturnAllTextClean();           
+            ConfigText = jsonEditor.ReturnAllTextClean();      
         }
 
         public IActionResult OnPost()
@@ -30,6 +31,5 @@ namespace FabolousUI.Pages.Settings
             }
             return RedirectToPage("Index");
         }
-        
     }
 }

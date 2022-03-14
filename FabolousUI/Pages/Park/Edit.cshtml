@@ -1,8 +1,6 @@
 ﻿@page
 @using BussinessLogicLibrary
-
 @using Newtonsoft.Json
-
 @model FabolousUI.Pages.Park.EditModel
 
 
@@ -40,64 +38,64 @@
         <thead>
             <tr>
                 <th>
-                    Registration number
+                    Registration Number
                 </th>
                 <th>
                     Date
                 </th>
-                <th>ParkingSpot</th>
+                <th>Parking Spot</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
 
-                @foreach (var line in Model.myNum)
+            @foreach (var line in Model.myNum)
+            {
+                @foreach (var secondLine in line.ParkedVehicles)
                 {
-                    @foreach (var line2 in line.Parked_Vehicles)
-                    {
-                        <tr>
-                            <td width="15%">@line2.Registration </td>
-                            <td width="15%">@line2.StartTime</td>
-                            <td width="5%">@line2.Parkingspot</td>
-                            <td>
-                                @if (line2.GetType() == typeof(Car))
-                                {
-                                    <a asp-page="../EditTypes/EditCar" asp-route-id="@line2.Id" class="btn btn-primary mx-2">
-                                        Edit
-                                        <i class="bi-pencil-square"></i>
-                                    </a>
-                                    <a asp-page="../Checkout/CheckoutCar" asp-route-id="@line2.Id" class="btn btn-danger mx-2">
-                                        Delete
-                                        <i class="bi-trash-fill"></i>
-                                    </a>
-                                     Dictionary<string, string> dv = new Dictionary<string, string>{{"Car", JsonConvert.SerializeObject(line2)}}; 
-                                    <a asp-page="ReroutIndex" asp-all-route-data="dv" class="btn btn-secondary mx-2">
-                                        Move
-                                        <i class="bi bi-minecart-loaded"></i>
-                                    </a>
-                                }
-                                @if (line2.GetType() == typeof(Motorcycle))
-                                {
-                                    <a asp-page="../EditTypes/EditMotorcykle" asp-route-id="@line2.Id" class="btn btn-primary mx-2">
-                                        Edit
-                                        <i class="bi-pencil-square"></i>
-                                    </a>
-                                    <a asp-page="../Checkout/CheckoutMotorcykle" asp-route-id="@line2.Id" class="btn btn-danger mx-2"> 
-                                        Delete
-                                        <i class="bi-trash-fill"></i>
-                                    </a>
-                                    
-                                        Dictionary<string, string> dv = new Dictionary<string, string>{{"Motorcycle", JsonConvert.SerializeObject(line2)}};
-                                       
-                                    <a asp-page="ReroutIndex" asp-all-route-data ="dv" class="btn btn-secondary mx-2">
-                                        Move
-                                        <i class="bi bi-minecart-loaded"></i>
-                                    </a>
-                                }
-                            </td>
-                            </tr>
-                    }
+                    <tr>
+                        <td width="15%">@secondLine.Registration </td>
+                        <td width="15%">@secondLine.StartTime</td>
+                        <td width="5%">@secondLine.Parkingspot</td>
+                        <td>
+                            @if (secondLine.GetType() == typeof(Car))
+                            {
+                                <a asp-page="../EditTypes/EditCar" asp-route-id="@secondLine.Id" class="btn btn-primary mx-2">
+                                    Edit
+                                    <i class="bi-pencil-square"></i>
+                                </a>
+                                <a asp-page="../Checkout/CheckoutCar" asp-route-id="@secondLine.Id" class="btn btn-danger mx-2">
+                                    Delete
+                                    <i class="bi-trash-fill"></i>
+                                </a>
+                                Dictionary<string, string> dv = new Dictionary<string, string> { { "Car", JsonConvert.SerializeObject(secondLine) } };
+                                <a asp-page="ReroutIndex" asp-all-route-data="dv" class="btn btn-secondary mx-2">
+                                    Move
+                                    <i class="bi bi-minecart-loaded"></i>
+                                </a>
+                            }
+                            @if (secondLine.GetType() == typeof(Motorcycle))
+                            {
+                                <a asp-page="../EditTypes/EditMotorcykle" asp-route-id="@secondLine.Id" class="btn btn-primary mx-2">
+                                    Edit
+                                    <i class="bi-pencil-square"></i>
+                                </a>
+                                <a asp-page="../Checkout/CheckoutMotorcykle" asp-route-id="@secondLine.Id" class="btn btn-danger mx-2">
+                                    Delete
+                                    <i class="bi-trash-fill"></i>
+                                </a>
+
+                                Dictionary<string, string> dv = new Dictionary<string, string> { { "Motorcycle", JsonConvert.SerializeObject(secondLine) } };
+
+                                <a asp-page="ReroutIndex" asp-all-route-data="dv" class="btn btn-secondary mx-2">
+                                    Move
+                                    <i class="bi bi-minecart-loaded"></i>
+                                </a>
+                            }
+                        </td>
+                    </tr>
                 }
+            }
         </tbody>
     </table>
 </div>

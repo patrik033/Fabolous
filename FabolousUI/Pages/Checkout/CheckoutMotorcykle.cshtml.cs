@@ -9,17 +9,16 @@ namespace FabolousUI.Pages.Checkout
     public class CheckoutMotorcykleModel : PageModel
     {
         private readonly FabolousDbContext _context;
-        public Motorcycle myCar { get; set; } = new Motorcycle();
+        public Motorcycle MyCar { get; set; } = new Motorcycle();
 
-        public string NiceTime { get; set; }
+        public string FormatedTime { get; set; }
         public TimeSpan ParkedTime { get; set; }
         public JsonEditor Editor { get; set; }
         public CostCalculation CostCalculator { get; set; }
         public string Cost { get; set; }
         public decimal TotalCost { get; set; }
-        public string NiceValue { get; set; }
+        public string FormatedCost { get; set; }
         public string TextString { get; set; }
-
 
         public CheckoutMotorcykleModel(FabolousDbContext context)
         {
@@ -31,14 +30,14 @@ namespace FabolousUI.Pages.Checkout
 
         public void OnGet(int id)
         {
-            myCar = _context.motorcycles.FirstOrDefault(c => c.Id == id);
+            MyCar = _context.motorcycles.FirstOrDefault(c => c.Id == id);
             Cost = Editor.ReadProperty("Motorcycle", "Cost");
-            ParkedTime = CostCalculator.ParkedTime(myCar.StartTime);
-            NiceTime = CostCalculator.ParkedTimeToScreen(myCar.StartTime);
-            TotalCost = CostCalculator.CalculateCost(myCar.StartTime, int.Parse(Cost));
-            NiceValue = TotalCost.ToString("C2");
-            TextString = $"\nParkerad tid:   {NiceTime} \n" +
-               $"Total kostnad:   {NiceValue}";
+            ParkedTime = CostCalculator.ParkedTime(MyCar.StartTime);
+            FormatedTime = CostCalculator.ParkedTimeToScreen(MyCar.StartTime);
+            TotalCost = CostCalculator.CalculateCost(MyCar.StartTime, int.Parse(Cost));
+            FormatedCost = TotalCost.ToString("C2");
+            TextString = $"\nParkerad tid:   {FormatedTime} \n" +
+               $"Total kostnad:   {FormatedCost}";
 
         }
 
@@ -61,4 +60,3 @@ namespace FabolousUI.Pages.Checkout
         }
     }
 }
-
