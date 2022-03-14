@@ -1,20 +1,12 @@
 ﻿@page
 @model FabolousUI.Pages.Park.IndexModel
+@using Newtonsoft.Json;
 
 
 <h1>Park page</h1>
-<form method="post">
-<label>Reg Search</label>
-@{
-    Dictionary<string, string> result = new Dictionary<string, string>();
-    
-   
-}
 
-    <input class="form-text" name="search" value="" id="search" />
 
-<button type="submit" class="btn btn-secondary" asp-all-route-data="result" asp-page="Search_Result">Search</button>
-</form>
+
 
 <hr />
 <br />

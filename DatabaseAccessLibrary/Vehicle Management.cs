@@ -94,19 +94,19 @@ namespace DatabaseAccessLibrary
         /// <returns></returns>
         public IEnumerable<object> SearchButtonListGenerator(string regNumber)
         {
-               
-                var vehicleList = new List<object>();   
-                var mcQ =  _db.motorcycles.Where(x => x.Registration.Contains(regNumber)).ToList();
-                var carQ = _db.cars.Where(x => x.Registration.Contains(regNumber)).ToList();
-                if (mcQ == null)
+            List<object> list = new List<object>();
+               if (_db.motorcycles.Where(x => x.Registration.Contains(regNumber)).Any())
+                foreach(var item in _db.motorcycles.Where(x => x.Registration.Contains(regNumber)))
                 {
-                    return carQ;
+                    list.Add(item);
                 }
-                else if (carQ == null)
+                if (_db.cars.Where(x => x.Registration.Contains(regNumber)).Any())
+                foreach (var item in _db.motorcycles.Where(x => x.Registration.Contains(regNumber)))
                 {
-                    return mcQ;
+                    list.Add(item);
                 }
-                return vehicleList; 
+            
+                return list; 
         }
         /// <summary>
         /// Metod för att uppdatera fältet Parkingspot på det fordon som har

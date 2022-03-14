@@ -3,6 +3,7 @@ using BussinessLogicLibrary.Stuff;
 using DatabaseAccessLibrary;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 
 namespace FabolousUI.Pages.Park
 {
@@ -14,7 +15,7 @@ namespace FabolousUI.Pages.Park
         private readonly FabolousDbContext _context;
 
         public IList<Parkingspot> Cars { get; set; }
-        private Car[] cars { get; set; }
+        
 
         //page number variable
         [BindProperty(SupportsGet = true)]
@@ -24,34 +25,25 @@ namespace FabolousUI.Pages.Park
         [BindProperty(SupportsGet = true)]
         public int S { get; set; } = 50;
         public int TotalRecords { get; set; } = 0;
-        public List<object> FoundVehicles { get; set; } = new List<object>();
-        public int StoredVehicles { get; set; }
-        [BindProperty(SupportsGet = true)]
-        public string Search { get; set; }
-
+      
+      
+                    
+               
         public Parking_Garage Garage;
         public Garage_Functions GarageFunctions;
         public JsonEditor jsonEditor = new JsonEditor();
-        public Vehicle_Management vm = new Vehicle_Management();
+        public Vehicle_Management vm;
         public IndexModel(FabolousDbContext context)
         {
             _context = context;
             GarageFunctions = new Garage_Functions(_context);
+            vm = new Vehicle_Management(_context);
         }
-
-        public IActionResult Test()
-        {
-            if (Search != null)
-            {
-                FoundVehicles = vm.SearchButtonListGenerator(Search).ToList();
-                return Page();
-            }
-            else
-                return Page();
-        }
+       
+        
 
 
-        public IActionResult OnGet()
+        public void OnGet()
         {
            
 
@@ -62,23 +54,24 @@ namespace FabolousUI.Pages.Park
 
             if (TotalRecords < GarageFunctions.GetHighestParkingSpot())
             {
-                return RedirectToPage("../WrongParkingSpotCount");
+                RedirectToPage("../WrongParkingSpotCount");
 
             }
+
+            
+
+
 
             Garage.spots = Garage.spots.Skip((P-1) * S).Take(S).ToList();
 
             Cars = Garage.spots
                 .Skip((P - 1) * S)
                 .Take(S)
-                .ToList();
+                .ToList();            
 
-            return Page();
+            
         }
-        public IActionResult OnPost()
-        {
-            return Page();
-        }
+        
 
     }
 }
