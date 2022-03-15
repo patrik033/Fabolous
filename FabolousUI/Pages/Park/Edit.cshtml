@@ -54,12 +54,14 @@
                 @foreach (var secondLine in line.ParkedVehicles)
                 {
                     <tr>
+                        
                         <td width="15%">@secondLine.Registration </td>
                         <td width="15%">@secondLine.StartTime</td>
                         <td width="5%">@secondLine.Parkingspot</td>
                         <td>
                             @if (secondLine.GetType() == typeof(Car))
                             {
+                                
                                 <a asp-page="../EditTypes/EditCar" asp-route-id="@secondLine.Id" class="btn btn-primary mx-2">
                                     Edit
                                     <i class="bi-pencil-square"></i>
