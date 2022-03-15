@@ -7,6 +7,9 @@
     var newSpot = @Model.MyNewParkingSpot;
 }
 
+        
+
+
 <div class="col-md-12 text-center">
     <h2>Vehicle Information</h2>
 
@@ -17,7 +20,16 @@
             <p class="text-center">@vehicle.Registration<br />@vehicle.StartTime<br />@movedto<br /><ins>@newSpot</ins></p>
         }
         <a asp-page="../Park/Index" class="btn btn-outline-success btn-sm"><i class="fas fa-user"></i>Succesfully moved! Click me to get back!</a>
+       
     </div>
+    <br />
+    <br />
+     <iframe width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/Aul35gjdFWM?&autoplay=1" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
 </div>
 
 @section Scripts{
