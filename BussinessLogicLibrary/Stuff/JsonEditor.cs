@@ -59,24 +59,27 @@ namespace BussinessLogicLibrary.Stuff
             string json = File.ReadAllText(path);
 
             dynamic jsonObject = JsonConvert.DeserializeObject(json);
-
-            if (property.ToLower() == "car" || property.ToLower() == "motorcycle")
+            if (value >= 0 && value < 2000000)
             {
-                if (/*field.ToLower() == "size" || */field.ToLower() == "cost")
+                if (property.ToLower() == "car" || property.ToLower() == "motorcycle")
                 {
-                    jsonObject[char.ToUpper(property[0]) + property.Substring(1)][char.ToUpper(field[0]) + field.Substring(1)] = value;
+                    if (/*field.ToLower() == "size" || */field.ToLower() == "cost")
+                    {
+                        jsonObject[char.ToUpper(property[0]) + property.Substring(1)][char.ToUpper(field[0]) + field.Substring(1)] = value;
+                    }
+                    else return;
+                }
+                else if (/*property.ToLower() == "parkingspot" ||*/ property.ToLower() == "parkinggarage")
+                {
+                    if (field.ToLower() == "size")
+                    {
+                        jsonObject[char.ToUpper(property[0]) + property.Substring(1)][char.ToUpper(field[0]) + field.Substring(1)] = value;
+
+                    }
+                    else return;
+
                 }
                 else return;
-            }
-            else if (/*property.ToLower() == "parkingspot" ||*/ property.ToLower() == "parkinggarage")
-            {
-                if(field.ToLower() == "size")
-                {
-                    jsonObject[char.ToUpper(property[0]) + property.Substring(1)][char.ToUpper(field[0]) + field.Substring(1)] = value;
-
-                }
-                else return;
-
             }
             else return;
 
