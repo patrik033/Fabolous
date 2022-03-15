@@ -38,6 +38,9 @@
         <thead>
             <tr>
                 <th>
+                    Type
+                </th>
+                <th>
                     Registration Number
                 </th>
                 <th>
@@ -54,6 +57,7 @@
                 @foreach (var secondLine in line.ParkedVehicles)
                 {
                     <tr>
+                        <td width="15%">@secondLine.GetType().ToString().Substring(@secondLine.GetType().ToString().IndexOf('.')+1)</td>
                         <td width="15%">@secondLine.Registration </td>
                         <td width="15%">@secondLine.StartTime</td>
                         <td width="5%">@secondLine.Parkingspot</td>

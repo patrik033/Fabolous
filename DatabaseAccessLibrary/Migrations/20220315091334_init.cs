@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DatabaseAccessLibrary.Migrations
 {
-    public partial class init1 : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,7 @@ namespace DatabaseAccessLibrary.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Size = table.Column<int>(type: "int", nullable: false),
-                    Registration = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Registration = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
                     StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Parkingspot = table.Column<int>(type: "int", nullable: false)
                 },
@@ -31,7 +31,7 @@ namespace DatabaseAccessLibrary.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Registration = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Registration = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
                     StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Parkingspot = table.Column<int>(type: "int", nullable: false)
                 },
@@ -83,25 +83,7 @@ namespace DatabaseAccessLibrary.Migrations
                     { 36, 36, "BWN8988", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 37, 37, "DRG4N6", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 38, 38, "0AGVG0", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 39, 39, "DKVQ31", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 40, 40, "22528MC", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 41, 41, "1CK7456", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 42, 42, "AEH9540", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) }
-                });
-
-            migrationBuilder.InsertData(
-                table: "cars",
-                columns: new[] { "Id", "Parkingspot", "Registration", "Size", "StartTime" },
-                values: new object[,]
-                {
-                    { 43, 43, "6JMW833", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 44, 44, "535621B", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 45, 45, "4JWR404", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 46, 46, "N73EXY", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 47, 47, "K9CRZY", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 48, 48, "4GUG721", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 49, 49, "8GTS234", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 50, 50, "446AH", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 39, 39, "DKVQ31", 4, new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -111,7 +93,14 @@ namespace DatabaseAccessLibrary.Migrations
                 {
                     { 1, 51, "19AX641", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 2, 52, "55AR583", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 3, 53, "23AH141", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3, 53, "23AH141", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                });
+
+            migrationBuilder.InsertData(
+                table: "motorcycles",
+                columns: new[] { "Id", "Parkingspot", "Registration", "StartTime" },
+                values: new object[,]
+                {
                     { 4, 54, "7AR1649", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 5, 55, "52AD117", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 6, 56, "35AA969", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
@@ -142,30 +131,12 @@ namespace DatabaseAccessLibrary.Migrations
                     { 31, 81, "33AX623", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 32, 82, "64AP580", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 33, 83, "13AY794", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 34, 84, "55AC734", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) }
-                });
-
-            migrationBuilder.InsertData(
-                table: "motorcycles",
-                columns: new[] { "Id", "Parkingspot", "Registration", "StartTime" },
-                values: new object[,]
-                {
+                    { 34, 84, "55AC734", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 35, 85, "30AD500", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 36, 86, "38AF650", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 37, 87, "6AM1722", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 38, 88, "11AP780", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 39, 89, "54AG156", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 40, 90, "61AY262", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 41, 91, "62AK646", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 42, 92, "45AO853", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 43, 93, "20AF377", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 44, 94, "30AQ301", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 45, 95, "62AZ570", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 46, 96, "61AS803", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 47, 97, "25AG915", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 48, 98, "12AR787", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 49, 99, "11AV356", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 50, 100, "51AX141", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 39, 89, "54AG156", new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
         }
 

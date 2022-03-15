@@ -36,15 +36,5 @@
 {"Id":36,"Size":2,"Registration":"38AF650","Parkingspot":86,"StartTime":"2012-02-13 00:00:00.000"},
 {"Id":37,"Size":2,"Registration":"6AM1722","Parkingspot":87,"StartTime":"2012-02-13 00:00:00.000"},
 {"Id":38,"Size":2,"Registration":"11AP780","Parkingspot":88,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":39,"Size":2,"Registration":"54AG156","Parkingspot":89,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":40,"Size":2,"Registration":"61AY262","Parkingspot":90,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":41,"Size":2,"Registration":"62AK646","Parkingspot":91,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":42,"Size":2,"Registration":"45AO853","Parkingspot":92,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":43,"Size":2,"Registration":"20AF377","Parkingspot":93,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":44,"Size":2,"Registration":"30AQ301","Parkingspot":94,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":45,"Size":2,"Registration":"62AZ570","Parkingspot":95,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":46,"Size":2,"Registration":"61AS803","Parkingspot":96,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":47,"Size":2,"Registration":"25AG915","Parkingspot":97,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":48,"Size":2,"Registration":"12AR787","Parkingspot":98,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":49,"Size":2,"Registration":"11AV356","Parkingspot":99,"StartTime":"2012-02-13 00:00:00.000"},
-{"Id":50,"Size":2,"Registration":"51AX141","Parkingspot":100,"StartTime":"2012-02-13 00:00:00.000"}]
+{"Id":39,"Size":2,"Registration":"54AG156","Parkingspot":89,"StartTime":"2012-02-13 00:00:00.000"}
+]

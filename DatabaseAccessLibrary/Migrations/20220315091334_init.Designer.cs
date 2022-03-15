@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatabaseAccessLibrary.Migrations
 {
     [DbContext(typeof(FabolousDbContext))]
-    [Migration("20220310153609_init1")]
-    partial class init1
+    [Migration("20220315091334_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,7 +36,9 @@ namespace DatabaseAccessLibrary.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Registration")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("nvarchar(8)");
 
                     b.Property<int>("Size")
                         .HasColumnType("int");
@@ -360,94 +362,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Registration = "DKVQ31",
                             Size = 4,
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Parkingspot = 40,
-                            Registration = "22528MC",
-                            Size = 4,
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 41,
-                            Parkingspot = 41,
-                            Registration = "1CK7456",
-                            Size = 4,
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Parkingspot = 42,
-                            Registration = "AEH9540",
-                            Size = 4,
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Parkingspot = 43,
-                            Registration = "6JMW833",
-                            Size = 4,
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Parkingspot = 44,
-                            Registration = "535621B",
-                            Size = 4,
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Parkingspot = 45,
-                            Registration = "4JWR404",
-                            Size = 4,
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Parkingspot = 46,
-                            Registration = "N73EXY",
-                            Size = 4,
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Parkingspot = 47,
-                            Registration = "K9CRZY",
-                            Size = 4,
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Parkingspot = 48,
-                            Registration = "4GUG721",
-                            Size = 4,
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Parkingspot = 49,
-                            Registration = "8GTS234",
-                            Size = 4,
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Parkingspot = 50,
-                            Registration = "446AH",
-                            Size = 4,
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -463,7 +377,9 @@ namespace DatabaseAccessLibrary.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Registration")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("nvarchar(8)");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
@@ -744,83 +660,6 @@ namespace DatabaseAccessLibrary.Migrations
                             Id = 39,
                             Parkingspot = 89,
                             Registration = "54AG156",
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Parkingspot = 90,
-                            Registration = "61AY262",
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 41,
-                            Parkingspot = 91,
-                            Registration = "62AK646",
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Parkingspot = 92,
-                            Registration = "45AO853",
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Parkingspot = 93,
-                            Registration = "20AF377",
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Parkingspot = 94,
-                            Registration = "30AQ301",
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Parkingspot = 95,
-                            Registration = "62AZ570",
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Parkingspot = 96,
-                            Registration = "61AS803",
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Parkingspot = 97,
-                            Registration = "25AG915",
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Parkingspot = 98,
-                            Registration = "12AR787",
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Parkingspot = 99,
-                            Registration = "11AV356",
-                            StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Parkingspot = 100,
-                            Registration = "51AX141",
                             StartTime = new DateTime(2012, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });

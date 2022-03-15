@@ -3,12 +3,11 @@ using BussinessLogicLibrary.Stuff;
 using DatabaseAccessLibrary;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Newtonsoft.Json;
 
 namespace FabolousUI.Pages.Park
 {
     [BindProperties]
-    public class IndexModel : PageModel
+    public class MapModel : PageModel
     {
         private readonly FabolousDbContext _context;
         public IList<Parkingspot> Cars { get; set; }
@@ -20,8 +19,7 @@ namespace FabolousUI.Pages.Park
         //page size variable
         [BindProperty(SupportsGet = true)]
 
-        //ändra detta värde om du vill se allt på skärmen
-        public int S { get; set; } = 50;
+        public int S { get; set; }
         public int TotalRecords { get; set; } = 0;
         public int StoredVehicles { get; set; }
 
@@ -29,8 +27,9 @@ namespace FabolousUI.Pages.Park
         public GarageFunctions GarageFunctions;
         public JsonEditor jsonEditor = new JsonEditor();
 
-        public IndexModel(FabolousDbContext context)
+        public MapModel(FabolousDbContext context)
         {
+            S = int.Parse(jsonEditor.ReadProperty("Parkinggarage", "Size"));
             _context = context;
             GarageFunctions = new GarageFunctions(_context);
         }
@@ -38,7 +37,7 @@ namespace FabolousUI.Pages.Park
         public IActionResult OnGet()
         {
             Garage = GarageFunctions.InstanciateGarage();
-            Garage = GarageFunctions.GetParkedVehicles(Garage);        
+            Garage = GarageFunctions.GetParkedVehicles(Garage);
             TotalRecords = Garage.spots.Count();
 
             if (TotalRecords < GarageFunctions.GetHighestParkingSpot())
@@ -46,7 +45,7 @@ namespace FabolousUI.Pages.Park
                 return RedirectToPage("../WrongParkingSpotCount");
             }
 
-            Garage.spots = Garage.spots.Skip((P-1) * S).Take(S).ToList();
+            Garage.spots = Garage.spots.Skip((P - 1) * S).Take(S).ToList();
 
             Cars = Garage.spots
                 .Skip((P - 1) * S)
